@@ -19,18 +19,18 @@ app.use(serve('dist'))
 //     ctx.res.end('')
 //     next()
 //   })
-app.use(async (ctx, next) => {
-    console.log(url.parse(ctx.req.url).pathname)
-    const pathname = url.parse(ctx.req.url).pathname
-    if (pathname === '/') {
-      ctx.res.writeHead(200, {
-        'Content-Type': 'text/html',
-        'Link': `<http://localhost:${PORT}/index.html>; rel="fragment-script"`
-      })
-    }
-    ctx.res.end('')
-    next()
-})
+// app.use(async (ctx, next) => {
+//     console.log(url.parse(ctx.req.url).pathname)
+//     const pathname = url.parse(ctx.req.url).pathname
+//     if (pathname === '/') {
+//       ctx.res.writeHead(200, {
+//         'Content-Type': 'text/html',
+//         'Link': `<http://localhost:${PORT}/index.html>; rel="fragment-script"`
+//       })
+//     }
+//     ctx.res.end('')
+//     next()
+// })
 
 app.listen(PORT, () => {
   console.log(`SPA Fragment Server started at ${PORT}`)
