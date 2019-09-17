@@ -1,0 +1,36 @@
+{
+  "name": "tailor-react-spa",
+  "version": "1.0.0",
+  "description": "An exploration into using Tailor with React",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "node tailor.js",
+    "build:fragments": "lerna run build",
+    "start:fragments": "lerna run --parallel start",
+    "watch:fragments": "lerna run --parallel watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsnolan23/tailor-react-spa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsnolan23/tailor-react-spa/issues"
+  },
+  "homepage": "https://github.com/tsnolan23/tailor-react-spa#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.5.1",
+    "lerna": "^3.14.1",
+    "node-tailor": "^3.4.0",
+    "webpack": "^3.8.1"
+  }
+}

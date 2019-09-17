@@ -1,0 +1,13 @@
+.chat {
+    width: 250px;
+    height: 30px;
+    background: url('./a1.jpg');
+    cursor: pointer;
+    transition: height .3s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #5e81ac;
+    &.expanded {
+        height: 250px;
+    }
+}
