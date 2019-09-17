@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "watch": "webpack -w",
+    "install": "npm i",
     "start": "node fragment.js"
   },
   "author": "",

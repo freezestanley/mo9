@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node tailor.js",
     "build:fragments": "lerna run build",
+    "install": "yarn && lerna run --parallel install",
     "start:fragments": "lerna run --parallel start",
     "watch:fragments": "lerna run --parallel watch"
   },

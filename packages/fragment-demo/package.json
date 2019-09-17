@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=production webpack-dev-server --hot --inline --progress --colors --config build/webpack.dev.config.js",
+    "install": "npm i",
     "start": "node fragment.js",
     "build": "cross-env NODE_ENV=production webpack --progress --colors --config build/webpack.production.js",
     "dll": "cross-env NODE_ENV=production webpack --progress --colors --config build/webpack.dll.js",
