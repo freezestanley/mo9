@@ -8,18 +8,18 @@ const app = new Koa()
 const PORT = 3006
 
 app.use(serve('public'))
-app.use(async (ctx, next) => {
-  const pathname = url.parse(ctx.req.url).pathname
-  console.log('pathname=' + pathname)
-  if (pathname === '/') {
-    ctx.res.writeHead(200, {
-      'Content-Type': 'text/html',
-      'Link': `<http://localhost:${PORT}/bundle.js>; rel="fragment-script"`
-    })
-  }
-  ctx.res.end('')
-  next()
-})
+// app.use(async (ctx, next) => {
+//   const pathname = url.parse(ctx.req.url).pathname
+//   console.log('pathname=' + pathname)
+//   if (pathname === '/') {
+//     ctx.res.writeHead(200, {
+//       'Content-Type': 'text/html',
+//       'Link': `<http://localhost:${PORT}/bundle.js>; rel="fragment-script"`
+//     })
+//   }
+//   ctx.res.end('')
+//   next()
+// })
 
 app.listen(PORT, () => {
   console.log(`SPA Fragment Server started at ${PORT}`)

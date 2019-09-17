@@ -1,10 +1,22 @@
 'use strict'
 
 const http = require('http')
-const Tailor = require('node-tailor')
+// const Tailor = require('node-tailor')
+const Tailor = require('./tailor/index.js')
 const tailor = new Tailor({
   templatesPath: __dirname + '/templates'
 })
+const Koa = require('koa')
+const serve = require('koa-static')
+const app = new Koa()
+const PORT = 8080
+// app.use(async (ctx, next) => {
+//   tailor.requestHandler(ctx.req, ctx.res)
+// })
+
+// app.listen(PORT, () => {
+//   console.log(`SPA Fragment Server started at ${PORT}`)
+// })
 
 http
   .createServer((req, res) => {
