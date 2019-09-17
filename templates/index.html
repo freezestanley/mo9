@@ -4,21 +4,22 @@
   <title>Tailor Example Application</title>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="http://localhost:6006/main.css" /> 
+  <script src="http://localhost:6006/bundle.js"></script>
   <style>
     body {
       background: #ECEFF4;
     }
   </style>
   <script>
-    (function(d) {
-      require(d);
-      var arr = [ 'react', 'react-dom', 'prop-types', 'classnames', 'proppy', 'proppy-react', 'antd', 'antdcss'];
-      while (i = arr.pop())(function(dep) {
-        define(dep, d, function(b) {
-          return b[dep];
-        })
-      })(i);
-    }(['http://localhost:6006/bundle.js']));
+    // (function(d) {
+    //   require(d);
+    //   var arr = [ 'react', 'react-dom', 'prop-types', 'classnames', 'proppy', 'proppy-react', 'antd', 'antdcss'];
+    //   while (i = arr.pop())(function(dep) {
+    //     define(dep, d, function(b) {
+    //       return b[dep];
+    //     })
+    //   })(i);
+    // }(['http://localhost:6006/bundle.js']));
     
   </script>
 </head>
@@ -35,7 +36,7 @@
   <fragment src="http://localhost:3006"></fragment>
   <fragment src="http://localhost:5000"></fragment>
   <script>
-     require(['app']);
+    //  require(['app']);
   </script>
 </body>
 </html>
