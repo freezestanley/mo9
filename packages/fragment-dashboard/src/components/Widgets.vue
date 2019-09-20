@@ -1,9 +1,9 @@
 <template>
   <div class="links-list">
-    <h2>Essential Links</h2>
+    <h2>This is Vue</h2>
     <ul>
       <li>
-        <router-link to="/">Start page</router-link>
+        <router-link to="/">返回首页</router-link>
       </li>
       <li>
         <router-link :to="{ name: 'item'}">Item</router-link>

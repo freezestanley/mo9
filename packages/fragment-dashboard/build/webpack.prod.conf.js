@@ -29,7 +29,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   // },
 
   output: {
-    path: path.resolve(__dirname, '..', 'public'),
+    path: path.resolve(__dirname, '..', 'dist'),
     publicPath: 'http://localhost:3006/',
     filename: 'bundle.js'
   },

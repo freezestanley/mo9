@@ -3,12 +3,13 @@
 const http = require('http')
 // const Tailor = require('node-tailor')
 const Tailor = require('./tailor/index.js')
+const fs = require('fs')
 const tailor = new Tailor({
   templatesPath: __dirname + '/templates'
 })
-const Koa = require('koa')
-const serve = require('koa-static')
-const app = new Koa()
+// const Koa = require('koa')
+// const serve = require('koa-static')
+// const app = new Koa()
 const PORT = 8080
 // app.use(async (ctx, next) => {
 //   tailor.requestHandler(ctx.req, ctx.res)
@@ -20,6 +21,10 @@ const PORT = 8080
 
 http
   .createServer((req, res) => {
+    if (req.url === '/bundle.js') {
+      res.writeHead(200, { 'Content-Type': 'application/javascript' })
+      return fs.createReadStream('./yy/dist/bundle.js').pipe(res)
+    }
     if (req.url === '/favicon.ico') {
       res.writeHead(200, { 'Content-Type': 'image/x-icon' })
       return res.end('')

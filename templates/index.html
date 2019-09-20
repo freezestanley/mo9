@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>Tailor Example Application</title>
+  <meta charset='UTF-8'>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="http://localhost:6006/main.css" /> 
+  <!-- <link rel="stylesheet" type="text/css" href="http://localhost:6006/main.css" />  -->
+  <script src="http://localhost:8080/bundle.js"></script>
   <script src="http://localhost:6006/bundle.js"></script>
   <style>
     body {
@@ -20,23 +22,33 @@
     //     })
     //   })(i);
     // }(['http://localhost:6006/bundle.js']));
+    function copyText () {
+      window.yy.default([ { 'name': 'app1', 'entry': 'http://localhost:7010' } ])
+    }
     
   </script>
 </head>
 <body>
+  
   <div id="header"></div>
   <div id="contacts"></div>
   <div id="chat"></div>
   <div id="dashboard"></div>
-  <div id="demo"></div>
+
+  <div id="demo" class="demo"></div>
+  <div style="border:1px solid #000; padding:10px;text-align: center;background:#fff;" onclick="copyText()">添加子应用</div>
+  <!-- <div id="hot"  class="hot"></div> -->
+  <div id="other"></div>
   <!--chat-->
-  <!-- <fragment src="http://localhost:8081"></fragment>  -->
-  <fragment src="http://localhost:5000"></fragment>
-  <!-- <fragment src="http://localhost:3000"></fragment> -->
+  <div id="tailor_template">
+
+  <!-- dashboard -->
   <fragment src="http://localhost:3006"></fragment>
+  <!-- <fragment src="http://localhost:8081"></fragment>  -->
+  <!-- demo -->
   <fragment src="http://localhost:5000"></fragment>
-  <script>
-    //  require(['app']);
-  </script>
+  <!-- <fragment src="http://localhost:7010"></fragment> -->
+  
+  </div>
 </body>
 </html>

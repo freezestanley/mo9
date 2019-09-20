@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-dashboard-app">
+  <div id="vue-dashboard-app" class="dashboard">
     <Widgets></Widgets>
     <router-view></router-view>
   </div>
@@ -18,10 +18,12 @@ export default {
 </script>
 
 <style>
-#vue-dashboard-app {
+.dashboard{
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  background: #eee;
+  background:#fff;;
+  /* margin-top: 60px; */
+  margin:10px;
+  border:1px solid #000;
 }
 </style>

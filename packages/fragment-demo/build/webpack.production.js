@@ -15,7 +15,9 @@ module.exports = merge(baseWebpackConfig, {
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: 'http://localhost:5000/',
-        filename: 'js/[name].[chunkhash].js'
+        filename: 'js/[name].[chunkhash].js',
+        libraryTarget: 'umd',
+        library: 'demo'
     },
     plugins: [
         // new DllReferencePlugin({
@@ -55,13 +57,14 @@ module.exports = merge(baseWebpackConfig, {
                 }
             }
         }
-    },
+    }
+    ,
     externals: {
-        'react': 'common.react',
-        'react-dom': 'common.reactDom',
-        'prop-types': 'common.propTypes',
-        'classnames': 'common.classnames',
-        'proppy': 'common.proppy',
-        'proppy-react': 'common.proppyReact'
+        'react': 'react',
+        'react-dom': 'reactDom',
+        'prop-types': 'propTypes',
+        'classnames': 'classnames',
+        'proppy': 'proppy',
+        'proppy-react': 'proppyReact'
     }
 })

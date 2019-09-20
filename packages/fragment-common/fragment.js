@@ -5,7 +5,7 @@ const serve = require('koa-static')
 const Koa = require('koa')
 const app = new Koa()
 
-app.use(serve('public'))
+app.use(serve('dist'))
 app.use(async (ctx, next) => {
   const pathname = url.parse(ctx.req.url).pathname
   console.log('pathname=' + pathname)

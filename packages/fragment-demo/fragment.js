@@ -2,10 +2,25 @@ const http = require('http')
 const url = require('url')
 const fs = require('fs')
 const serve = require('koa-static')
+const cors = require('koa2-cors')
 const Koa = require('koa')
 const app = new Koa()
 const PORT = 5000
+app.use(cors())
 app.use(serve('dist'))
+// app.use(async (ctx, next) => {
+//   ctx.set('Access-Control-Allow-Origin', '*')
+//   ctx.set('Access-Control-Allow-Methods', 'PUT,DELETE,POST,GET')
+//   ctx.set('Access-Control-Max-Age', 3600 * 24)
+//   ctx.set('Access-Control-Allow-Credentials', 'true')
+//   ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+
+//   if (ctx.method === 'OPTIONS') {
+//     ctx.body = ''
+//   }
+//   console.log(`${ctx.request.method}: ${ctx.request.url}`)
+//   await next()
+// })
 
 // app.use(async (ctx, next) => {
 //     const pathname = url.parse(ctx.req.url).pathname

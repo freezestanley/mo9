@@ -1,0 +1,17 @@
+.app{
+    margin: 5px;
+    border: 1px solid #000;
+    background: #fff;
+    padding: 10px;
+    h2{
+        text-align: center;
+    }
+    & > nav ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            text-align: center;
+        }
+    }
+}

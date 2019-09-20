@@ -37,11 +37,11 @@ module.exports = {
   entry: './common.js',
   mode: 'development',
   output: {
-    path: __dirname + '/public',
+    path: __dirname + '/dist',
     publicPath: 'http://localhost:8081/public/',
     filename: 'bundle.js',
-    libraryTarget: 'umd',
-    library: 'common'
+    libraryTarget: 'window'
+    // library: 'common'
   },
   module: {
     rules: [

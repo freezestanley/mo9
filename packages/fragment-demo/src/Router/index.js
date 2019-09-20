@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from '../Home'
 import Detail from '../Detail'
 import Chat from '../Chat'
+import classNames from 'classnames'
+import './style.scss'
 
 function Index() {
     return <h2>Home</h2>
@@ -18,7 +20,8 @@ function Index() {
 
 const AppRouter = () => (
     <Router>
-      <div>
+      <div className={classNames('app')}>
+        <h2>This is React</h2>
         <nav>
           <ul>
             <li>
@@ -30,15 +33,15 @@ const AppRouter = () => (
             <li>
               <Link to="/users/">Users</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/home/">home</Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="/detail/">detail</Link>
             </li>
             <li>
               <Link to="/chat/">Chat</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
