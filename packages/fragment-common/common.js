@@ -1,5 +1,5 @@
 exports.react = require('react')
-exports['reactDom'] = require('react-dom')
+exports['ReactDOM'] = require('react-dom')
 exports['propTypes'] = require('prop-types')
 exports.classnames = require('classnames')
 exports.proppy = require('proppy')

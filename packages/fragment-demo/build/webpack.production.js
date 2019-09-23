@@ -61,7 +61,7 @@ module.exports = merge(baseWebpackConfig, {
     ,
     externals: {
         'react': 'react',
-        'react-dom': 'reactDom',
+        'react-dom': 'ReactDOM',
         'prop-types': 'propTypes',
         'classnames': 'classnames',
         'proppy': 'proppy',

@@ -1,5 +1,6 @@
 import { importEntry } from 'import-html-entry'
 import clearTemplate from './utils/clearTemplate'
+import fragment from './utils/fragment'
 
 const init = function () {
     window.addEventListener('load', function(e) {
@@ -8,32 +9,54 @@ const init = function () {
 }
 init ()
 
-/**
- * [
- *  {
- *      "name": "app1",
- *      "entry": "http://localhost:7100",
- *      "content": "demo"
- *  }
- * ]
- * @param [] applist 
- */
-
-
-async function loadApp(app) {
-    const { template: appContent, execScripts, getExternalScripts, getExternalStyleSheets } = await importEntry(app.entry)
-    const { bootstrap: bootstrapApp, mount, unmount } = await execScripts(window)
-  }
-
-function registerApps (applist) {
-    applist.forEach(
-        async app => {
-            const { template: appContent, execScripts, getExternalScripts, getExternalStyleSheets } = await importEntry(app.entry)
-            const aa  = await execScripts(window)
-            console.log('============================')
-        }
-    )
+class ctrlApps {
+    constructor () {
+        this.sonApplication = []
+    }
+    checkRegisterApp (name) {
+        return this.sonApplication.find(function (app) {
+            return name === app.name
+        })
+    }
+    findApp (name) {
+        return this.sonApplication.find(function (app) {
+            return name === app.name
+        })
+    }
+    registerApps (applist) {
+        const _self = this
+        applist.forEach(
+            async app => {
+                const result = this.checkRegisterApp(app.name)
+                if (result) {
+                    console.error(`register app name:${app.name} should unique`)
+                } else {
+                    const { template, execScripts, getExternalScripts, getExternalStyleSheets } = await importEntry(app.entry)
+                    const script  = await execScripts(window)
+                    const extScript = await getExternalScripts(window)
+                    const styles = await getExternalStyleSheets()
+                    app.template = template
+                    app.styles = styles
+                    app.module = window[app.name]
+                    const sonApplication = new fragment(app)
+                    // delete window[app.name]
+                    // window[app.name] = null
+                    sonApplication.mount()
+                    this.sonApplication.push(sonApplication)
+                }
+            }
+        )
+    }
 }
 
-export default registerApps
+const instanceApp = new ctrlApps()
+
+
+document.addEventListener('DOMContentLoaded',function () {
+    const reapps = [ 
+        { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
+    ]
+    instanceApp.registerApps(reapps)
+})
+export const app = instanceApp
 

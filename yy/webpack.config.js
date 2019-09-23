@@ -40,8 +40,7 @@ module.exports = {
     path: __dirname + '/dist',
     publicPath: 'http://localhost:8081/',
     filename: 'bundle.js',
-    libraryTarget: 'umd',
-    library: 'yy'
+    libraryTarget: 'umd'
   },
   module: {
     rules: [

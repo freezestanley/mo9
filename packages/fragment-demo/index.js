@@ -6,3 +6,4 @@ ReactDOM.render(
   <Router/>,
   document.getElementById('demo')
 )
+export default Router
