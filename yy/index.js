@@ -13,21 +13,20 @@ class ctrlApps {
     constructor () {
         this.sonApplication = []
     }
-    checkRegisterApp (name) {
-        return this.sonApplication.find(function (app) {
-            return name === app.name
-        })
-    }
     findApp (name) {
         return this.sonApplication.find(function (app) {
             return name === app.name
         })
     }
+    unregisterApps (name) {
+        const result = this.findApp(name)
+        result.unmount()
+    }
     registerApps (applist) {
         const _self = this
         applist.forEach(
             async app => {
-                const result = this.checkRegisterApp(app.name)
+                const result = this.findApp(app.name)
                 if (result) {
                     console.error(`register app name:${app.name} should unique`)
                 } else {
