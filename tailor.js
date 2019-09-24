@@ -21,6 +21,9 @@ const PORT = 8080
 
 http
   .createServer((req, res) => {
+    if (req.url === '/blank') {
+      return res.end('')
+    }
     if (req.url === '/bundle.js') {
       res.writeHead(200, { 'Content-Type': 'application/javascript' })
       return fs.createReadStream('./yy/dist/bundle.js').pipe(res)

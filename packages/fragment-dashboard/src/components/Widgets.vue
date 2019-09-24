@@ -11,6 +11,9 @@
       <li>
         <router-link :to="{ name: 'shop'}">Shop</router-link>
       </li>
+      <li>
+        <router-link :to="{ name: 'about'}">About</router-link>
+      </li>
     </ul>
   </div>
 </template>

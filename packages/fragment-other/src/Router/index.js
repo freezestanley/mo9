@@ -22,9 +22,10 @@ const AppRouter = () => (
     <Router>
       <div className={classNames('app')}>
         <h2>This is React 子应用</h2>
+        <a href="https://www.163.com">www.163.com</a>
         <nav>
           <ul>
-            {/* <li>
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -32,16 +33,16 @@ const AppRouter = () => (
             </li>
             <li>
               <Link to="/users/">Users</Link>
-            </li> */}
-            {/* <li>
+            </li>
+            <li>
               <Link to="/home/">home</Link>
-            </li> */}
-            {/* <li>
+            </li>
+            <li>
               <Link to="/detail/">detail</Link>
             </li>
             <li>
               <Link to="/chat/">Chat</Link>
-            </li> */}
+            </li>
           </ul>
         </nav>
 

@@ -1,6 +1,7 @@
 import { importEntry } from 'import-html-entry'
 import clearTemplate from './utils/clearTemplate'
 import fragment from './utils/fragment'
+import { getSandbox } from './utils/sandbox'
 
 const init = function () {
     window.addEventListener('load', function(e) {
@@ -31,12 +32,16 @@ class ctrlApps {
                     console.error(`register app name:${app.name} should unique`)
                 } else {
                     const { template, execScripts, getExternalScripts, getExternalStyleSheets } = await importEntry(app.entry)
-                    const script  = await execScripts(window)
-                    const extScript = await getExternalScripts(window)
+                    debugger
+                    const sandbox = getSandbox()
+                    debugger
+                    console.log(sandbox)
+                    const script  = await execScripts(sandbox)
+                    const extScript = await getExternalScripts(sandbox)
                     const styles = await getExternalStyleSheets()
                     app.template = template
                     app.styles = styles
-                    app.module = window[app.name]
+                    app.module = sandbox[app.name]
                     const sonApplication = new fragment(app)
                     // delete window[app.name]
                     // window[app.name] = null
@@ -48,9 +53,10 @@ class ctrlApps {
     }
 }
 
+
+
+
 const instanceApp = new ctrlApps()
-
-
 document.addEventListener('DOMContentLoaded',function () {
     const reapps = [ 
         { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
