@@ -7,9 +7,16 @@ import 'antd/es/date-picker/style/css'
 
 import './styles.scss'
 
+function con () {
+  debugger
+  const target = window.parent.document.getElementById('other')
+  alert(target)
+  console.log(window.name)
+  return target
+}
 const Chat = () => (
   <div className={classNames('chat')}>
-    <DatePicker/>
+    <DatePicker />
     <div>this is Chat</div>
   </div>
 )

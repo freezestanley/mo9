@@ -28,25 +28,25 @@ const AppRouter = () => (
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about/">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
               <Link to="/users/">Users</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/home/">home</Link>
-            </li> */}
-            {/* <li>
+            </li> 
+            <li>
               <Link to="/detail/">detail</Link>
             </li>
             <li>
               <Link to="/chat/">Chat</Link>
-            </li> */}
+            </li>
           </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
-        <Route path="/about/" component={About} />
+        <Route path="/about" component={About} />
         <Route path="/users/" component={Users} />
         <Route path="/home/" component={Home} />
         <Route path="/detail/" component={Detail} />

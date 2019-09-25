@@ -22,9 +22,12 @@
     //     })
     //   })(i);
     // }(['http://localhost:6006/bundle.js']));
-    // function copyText () {
-    //   window.yy.default([ { 'name': 'app1', 'entry': 'http://localhost:7010' } ])
-    // }
+    function copyText () {
+      const reapps = [ 
+            { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
+        ]
+        app.registerApps(reapps)
+    }
   </script>
 </head>
 <body>

@@ -3,12 +3,7 @@ import clearTemplate from './utils/clearTemplate'
 import fragment from './utils/fragment'
 import { getSandbox } from './utils/sandbox'
 
-const init = function () {
-    window.addEventListener('load', function(e) {
-        clearTemplate()
-    })
-}
-init ()
+
 
 class ctrlApps {
     constructor () {
@@ -57,11 +52,15 @@ class ctrlApps {
 
 
 const instanceApp = new ctrlApps()
-document.addEventListener('DOMContentLoaded',function () {
-    const reapps = [ 
-        { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
-    ]
-    instanceApp.registerApps(reapps)
-})
+const init = function () {
+    window.addEventListener('load', function(e) {
+        clearTemplate()
+        // const reapps = [ 
+        //     { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
+        // ]
+        // instanceApp.registerApps(reapps)
+    })
+}
+init ()
 export const app = instanceApp
 
