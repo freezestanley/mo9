@@ -27,9 +27,7 @@ class ctrlApps {
                     console.error(`register app name:${app.name} should unique`)
                 } else {
                     const { template, execScripts, getExternalScripts, getExternalStyleSheets } = await importEntry(app.entry)
-                    debugger
                     const sandbox = getSandbox()
-                    debugger
                     console.log(sandbox)
                     const script  = await execScripts(sandbox)
                     const extScript = await getExternalScripts(sandbox)
