@@ -24,7 +24,7 @@
     // }(['http://localhost:6006/bundle.js']));
     function copyText () {
       const reapps = [ 
-            { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
+            { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other'),  baseUrl: '/other' } 
         ]
         app.registerApps(reapps)
     }

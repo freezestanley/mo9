@@ -10,8 +10,8 @@ export async function bootstrap() {
   console.log('react app bootstraped')
 }
 
-export async function mount(contain) {
-  ReactDOM.render(<Router/>, contain)
+export async function mount(contain, baseUrl) {
+  ReactDOM.render(<Router baseUrl={baseUrl}/>, contain)
 }
 
 export async function unmount(contain) {

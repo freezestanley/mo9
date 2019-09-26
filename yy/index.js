@@ -6,8 +6,9 @@ import { getSandbox } from './utils/sandbox'
 
 
 class ctrlApps {
-    constructor () {
+    constructor ( baseUrl ) {
         this.sonApplication = []
+        this.baseUrl = baseUrl||'';
     }
     findApp (name) {
         return this.sonApplication.find(function (app) {
@@ -35,6 +36,7 @@ class ctrlApps {
                     app.template = template
                     app.styles = styles
                     app.module = sandbox[app.name]
+                    app.baseUrl = _self.baseUrl + (app.baseUrl||'')
                     const sonApplication = new fragment(app)
                     // delete window[app.name]
                     // window[app.name] = null

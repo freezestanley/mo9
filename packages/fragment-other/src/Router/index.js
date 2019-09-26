@@ -18,8 +18,8 @@ function Index() {
     return <h2>Users</h2>
   }
 
-const AppRouter = () => (
-    <Router>
+const AppRouter = ({baseUrl}) => {
+    return (<Router basename={baseUrl}>
       <div className={classNames('app')}>
         <h2>This is React 子应用</h2>
         <a href="https://www.163.com">www.163.com</a>
@@ -53,8 +53,8 @@ const AppRouter = () => (
         <Route path="/detail/" component={Detail} />
         <Route path="/chat/" component={Chat} />
       </div>
-    </Router>
-);
+    </Router>)
+};
 
 
 export default AppRouter;
