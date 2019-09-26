@@ -20,7 +20,7 @@ export function getSandbox(appName) {
         ...hijackers()
     }, {
         get: function (target, name) {
-            console.log(name, target[name])
+            // console.log(name, target[name])
             if (name === 'undefined') return window.undefined;
             if (isConstructable(window[name])) {
                 return window[name];

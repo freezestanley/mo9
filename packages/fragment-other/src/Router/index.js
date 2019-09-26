@@ -21,7 +21,7 @@ function Index() {
 const AppRouter = ({baseUrl}) => {
     return (<Router basename={baseUrl}>
       <div className={classNames('app')}>
-        <h2>This is React 子应用</h2>
+        <h2>This is React 子应用 {baseUrl}</h2>
         <a href="https://www.163.com">www.163.com</a>
         <nav>
           <ul>

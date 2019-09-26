@@ -8,7 +8,10 @@ class fragment {
     constructor (app) {
         const { name, entry, contain, template, styles, module , baseUrl, free} = app;
         const _self = this
-        this.app = app;
+        
+        this.app = app
+        this.mounted = false
+
         this.name = name
         this.entry = entry
         this.style = []
@@ -23,10 +26,6 @@ class fragment {
             })
         }
     }
-
-    canActive(){
-        return this.app.canActive()
-    }
     // export async function bootstrap() {
     //     console.log('react app bootstraped')
     //   }
@@ -39,14 +38,20 @@ class fragment {
     //     ReactDOM.unmountComponentAtNode(document.getElementById('other'))
     //   }
     unmount () {
-        this.__module.unmount(this.contain)
-        this.__free()
+        if(this.mounted){
+            this.__module.unmount(this.contain)
+            this.__free()
+            this.mounted = false
+        }
     }
     mount (props) {
-        if (!this.contain) {
-            console.error(`Application name ${this.name} contain is null`)
+        if(!this.mounted){
+            if (!this.contain) {
+                console.error(`Application name ${this.name} contain is null`)
+            }
+            this.__module.mount(this.contain, this.baseUrl)
+            this.mounted = true;
         }
-        this.__module.mount(this.contain, this.baseUrl)
     }
     addStyle (txt) {
         let link = document.createElement('style')

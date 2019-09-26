@@ -18,8 +18,8 @@ function Index() {
     return <h2>Users</h2>
   }
 
-const AppRouter = () => (
-    <Router>
+const AppRouter = (baseUrl) => (
+    <Router basename={baseUrl}>
       <div className={classNames('app')}>
         <h2>This is React</h2>
         <nav>
