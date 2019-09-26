@@ -13,7 +13,7 @@ window.history.replaceState = function (state) {
 }
 
 function dispatchPopStateEvent(state) {
-  const evt = null;
+  let evt = null;
   try {
     evt = new PopStateEvent('popstate', { state });
   } catch (err) {
