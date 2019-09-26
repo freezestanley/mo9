@@ -27,6 +27,9 @@ class ctrlApps {
                 if (result) {
                     console.error(`register app name:${app.name} should unique`)
                 } else {
+                    if(!app.canActive){
+                        app.canActive = () => true
+                    }
                     const { template, execScripts, getExternalScripts, getExternalStyleSheets } = await importEntry(app.entry)
                     const sandbox = getSandbox()
                     console.log(sandbox)
@@ -36,11 +39,14 @@ class ctrlApps {
                     app.template = template
                     app.styles = styles
                     app.module = sandbox[app.name]
+                    app.free = sandbox.__tailor_free;
                     app.baseUrl = _self.baseUrl + (app.baseUrl||'')
                     const sonApplication = new fragment(app)
                     // delete window[app.name]
                     // window[app.name] = null
-                    sonApplication.mount()
+                    if (sonApplication.canActive()) {
+                        sonApplication.mount()
+                    }
                     this.sonApplication.push(sonApplication)
                 }
             }
@@ -48,10 +54,17 @@ class ctrlApps {
     }
 }
 
-
-
-
 const instanceApp = new ctrlApps()
+window.addEventListener('popstate', e=>{
+    instanceApp.sonApplication.forEach(item=>{
+        if(item.canActive()){
+            item.mount()
+        } else{
+            item.unmount()
+        }
+    })
+})
+
 const init = function () {
     window.addEventListener('load', function(e) {
         clearTemplate()

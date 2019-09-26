@@ -5,21 +5,27 @@
  * template: '<html>...</html>'
  */
 class fragment {
-    constructor ({ name, entry, contain, template, styles, module , baseUrl, __tailor_free}) {
+    constructor (app) {
+        const { name, entry, contain, template, styles, module , baseUrl, free} = app;
         const _self = this
+        this.app = app;
         this.name = name
         this.entry = entry
         this.style = []
         this.contain = contain
         this.template = template
-        this.baseUrl = baseUrl;
+        this.baseUrl = baseUrl
         this.__module = module
-        this.__free = __tailor_free
+        this.__free = free
         if (styles) {
             styles.map((ele) => {
                 _self.addStyle(ele)
             })
         }
+    }
+
+    canActive(){
+        return this.app.canActive()
     }
     // export async function bootstrap() {
     //     console.log('react app bootstraped')

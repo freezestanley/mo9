@@ -24,7 +24,12 @@
     // }(['http://localhost:6006/bundle.js']));
     function copyText () {
       const reapps = [ 
-            { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other'),  baseUrl: '/other' } 
+          { 
+            name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other'),  baseUrl: '/other',
+            canActive(){
+              return location.pathname.startsWith('/other')
+            }
+          }
         ]
         app.registerApps(reapps)
     }
