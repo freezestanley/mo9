@@ -20,7 +20,7 @@ export default function hijackers() {
     __tailor_free() {
       timeouts.forEach(clearTimeout);
       intervals.forEach(clearInterval);
-      listeners.forEach(args => window.removeEventListener.call(window, args))
+      listeners.forEach(args => window.removeEventListener.apply(window, args))
     }
   }
 }
