@@ -7,15 +7,15 @@ export default function hijackers() {
 
   return {
     addEventListener() {
-      window.addEventListener.call(window, arguments);
-      const args = Array.prototype.slice.call(null, arguments);
+      window.addEventListener.apply(window, arguments);
+      const args = Array.prototype.slice.call(arguments);
       listeners.push(args);
     },
     setTimeout() {
-      timeouts.push(window.setTimeout.apply(window, arguments))
+      timeouts.push(setTimeout.apply(null, arguments))
     },
     setInterval() {
-      intervals.push(window.setInterval.apply(window, arguments))
+      intervals.push(setInterval.apply(null, arguments))
     },
     __tailor_free() {
       timeouts.forEach(clearTimeout);

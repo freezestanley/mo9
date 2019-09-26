@@ -5,13 +5,14 @@
  * template: '<html>...</html>'
  */
 class fragment {
-    constructor ({ name, entry, contain, template, styles, module , __tailor_free}) {
+    constructor ({ name, entry, contain, template, styles, module , baseUrl, __tailor_free}) {
         const _self = this
         this.name = name
         this.entry = entry
         this.style = []
         this.contain = contain
         this.template = template
+        this.baseUrl = baseUrl;
         this.__module = module
         this.__free = __tailor_free
         if (styles) {
@@ -39,7 +40,7 @@ class fragment {
         if (!this.contain) {
             console.error(`Application name ${this.name} contain is null`)
         }
-        this.__module.mount(this.contain)
+        this.__module.mount(this.contain, this.baseUrl)
     }
     addStyle (txt) {
         let link = document.createElement('style')
