@@ -5,7 +5,7 @@
  * template: '<html>...</html>'
  */
 class fragment {
-    constructor ({ name, entry, contain, template, styles, module }) {
+    constructor ({ name, entry, contain, template, styles, module , __tailor_free}) {
         const _self = this
         this.name = name
         this.entry = entry
@@ -13,6 +13,7 @@ class fragment {
         this.contain = contain
         this.template = template
         this.__module = module
+        this.__free = __tailor_free
         if (styles) {
             styles.map((ele) => {
                 _self.addStyle(ele)
@@ -32,6 +33,7 @@ class fragment {
     //   }
     unmount () {
         this.__module.unmount(this.contain)
+        this.__free()
     }
     mount (props) {
         if (!this.contain) {

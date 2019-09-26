@@ -1,4 +1,5 @@
 import { isFunction, cloneDeep } from 'lodash'
+import hijackers from '../hijackers'
 export function getSandbox(appName) {
 
     // let proxyWindow = new Proxy(window, {
@@ -15,7 +16,9 @@ export function getSandbox(appName) {
     //     }
     // })
 
-    let proxyWindow = new Proxy({}, {
+    let proxyWindow = new Proxy({
+        ...hijackers()
+    }, {
         get: function (target, name) {
             console.log(name, target[name])
             if (name === 'undefined') return window.undefined;
