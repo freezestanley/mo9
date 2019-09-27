@@ -24,14 +24,20 @@
     // }(['http://localhost:6006/bundle.js']));
     function copyText () {
       const reapps = [ 
+          // { 
+          //   name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other'),  baseUrl: '/other',
+          //   canActive(){
+          //     return location.pathname.startsWith('/other/')
+          //   }
+          // },
+          // { 
+          //   name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other2'),  baseUrl: '/other2',
+          //   canActive(){
+          //     return location.pathname.startsWith('/other2/')
+          //   }
+          // },
           { 
-            name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other'),  baseUrl: '/other',
-            canActive(){
-              return location.pathname.startsWith('/other/')
-            }
-          },
-          { 
-            name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other2'),  baseUrl: '/other2',
+            name: 'fragmentvue', entry: 'http://localhost:7020', contain: document.getElementById('other2'),  baseUrl: '/other2',
             canActive(){
               return location.pathname.startsWith('/other2/')
             }
@@ -55,6 +61,7 @@
 
   <!-- <div id="hot"  class="hot"></div> -->
   <div id="other"></div>
+  ==================================
   <div id="other2"></div>
   <!--chat-->
   <div id="tailor_template">

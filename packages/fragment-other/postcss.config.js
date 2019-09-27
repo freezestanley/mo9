@@ -5,7 +5,7 @@ module.exports = {
     plugins: [
         require('autoprefixer'),
         require('postcss-import'),
-        selectorNamespace({ namespace: `.${component_nameSpace}` }),
+        selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace}`, rootSelector: '' }),
         postcssNormalize({ forceImport: true })
       ]
   }
