@@ -36,6 +36,7 @@ const postuse = {
 module.exports = {
   entry: './index.js',
   mode: 'development',
+  devtool: 'none',
   output: {
     path: __dirname + '/dist',
     publicPath: 'http://localhost:8081/',

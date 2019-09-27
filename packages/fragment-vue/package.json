@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "cross-env NODE_ENV=development vue-cli-service build",
     "lint": "vue-cli-service lint",
     "rebuild": "vue-cli-service build --target lib --name myLib src/main.js",
     "start": "node fragment.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "cross-env": "^6.0.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
