@@ -1,4 +1,4 @@
-import { importEntry } from 'import-html-entry'
+import { importEntry } from 'html-entry'
 import clearTemplate from './utils/clearTemplate'
 import fragment from './utils/fragment'
 import { getSandbox } from './utils/sandbox'
