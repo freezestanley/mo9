@@ -3,3 +3,6 @@ public
 dist
 .DS_Store
 package-lock.json
+*/dist/
+*/package-lock.json
+*/.DS_Store
