@@ -24,20 +24,28 @@
     // }(['http://localhost:6006/bundle.js']));
     function copyText () {
       const reapps = [ 
-          // { 
-          //   name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other'),  baseUrl: '/other',
-          //   canActive(){
-          //     return location.pathname.startsWith('/other/')
-          //   }
-          // },
-          // { 
-          //   name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other2'),  baseUrl: '/other2',
-          //   canActive(){
-          //     return location.pathname.startsWith('/other2/')
-          //   }
-          // },
           { 
-            name: 'fragmentvue', entry: 'http://localhost:7020', contain: document.getElementById('other2'),  baseUrl: '/other2',
+            name: 'other',
+            application_name: 'other',
+            entry: 'http://localhost:7010', 
+            contain: document.getElementById('other'),  
+            baseUrl: '/other',
+            canActive(){
+              return location.pathname.startsWith('/other/')
+            }
+          },
+          { 
+            name: 'other',
+            application_name: 'other',
+            entry: 'http://localhost:7010', contain: document.getElementById('other2'),  baseUrl: '/other2',
+            canActive(){
+              return location.pathname.startsWith('/other2/')
+            }
+          },
+          { 
+            name: 'fragmentvue',
+            application_name: 'fragmentvue',
+            entry: 'http://localhost:7020', contain: document.getElementById('other2'),  baseUrl: '/other2',
             canActive(){
               return location.pathname.startsWith('/other2/')
             }
