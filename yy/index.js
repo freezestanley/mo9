@@ -44,9 +44,9 @@ class ctrlApps {
                     const sonApplication = new fragment(app)
                     // delete window[app.name]
                     // window[app.name] = null
-                    // if (app.canActive()) {
+                    if (app.canActive()) {
                         sonApplication.mount()
-                    // }
+                    }
                     this.sonApplication.push(sonApplication)
                 }
             // }

@@ -38,6 +38,7 @@ class fragment {
     //     ReactDOM.unmountComponentAtNode(document.getElementById('other'))
     //   }
     unmount () {
+        // this.__module.unmount(this.contain)
         if(this.mounted){
             this.__module.unmount(this.contain)
             this.__free()
