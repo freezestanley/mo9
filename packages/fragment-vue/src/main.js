@@ -18,13 +18,16 @@ export async function bootstrap() {
 
 export async function mount(contain, baseUrl) {
   console.log('props from main framework', contain, baseUrl);
+  const div = document.createElement('div');
+  contain.appendChild(div);
   instance = new Vue({
     router: getRouter(baseUrl),
     render: h => h(App),
-  }).$mount('#' + contain.id);
+  }).$mount(div);
 }
 
 export async function unmount() {
   instance.$destroy();
+  instance.$el.parentNode.removeChild(instance.$el);
   instance = null;
 }
