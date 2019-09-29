@@ -19,7 +19,7 @@ function Index() {
   }
 
 const AppRouter = (baseUrl) => (
-    <Router basename={baseUrl}>
+    <Router>
       <div className={classNames('app')}>
         <h2>This is React</h2>
         <nav>

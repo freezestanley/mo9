@@ -37,7 +37,8 @@
           { 
             name: 'other',
             application_name: 'other',
-            entry: 'http://localhost:7010', contain: document.getElementById('other2'),  baseUrl: '/other2',
+            entry: 'http://localhost:7010', contain: document.getElementById('other2'),  
+            baseUrl: '/other2',
             canActive(){
               return location.pathname.startsWith('/other2/')
             }
@@ -45,9 +46,11 @@
           { 
             name: 'fragmentvue',
             application_name: 'fragmentvue',
-            entry: 'http://localhost:7020', contain: document.getElementById('other2'),  baseUrl: '/other2',
+            entry: 'http://localhost:7020', 
+            contain: document.getElementById('other3'),  
+            baseUrl: '/other3',
             canActive(){
-              return location.pathname.startsWith('/other2/')
+              return location.pathname.startsWith('/other3/')
             }
           },
         ]
@@ -66,19 +69,21 @@
   <div style="border:1px solid #000; padding:10px;text-align: center;background:#fff;" onclick="copyText()">添加子应用</div>
   <div><a href="javascript:;" onclick="history.pushState(null, null, '/other/about')">/other/about</a></div>
   <div><a href="javascript:;" onclick="history.pushState(null, null, '/other2/about')">/other2/about</a></div>
-  <div><a href="javascript:;" onclick="history.pushState(null, null, '/other2/helloworld')">/other2/helloworld</a></div>
+  <div><a href="javascript:;" onclick="history.pushState(null, null, '/other3/helloworld')">/other2/helloworld</a></div>
 
   <!-- <div id="hot"  class="hot"></div> -->
   <div id="other"></div>
   ==================================
   <div id="other2"></div>
   <!--chat-->
+  <div id="other3"></div>
+  <!--chat-->
   <div id="tailor_template">
   <!-- dashboard -->
   <fragment src="http://localhost:3006"></fragment>
   <!-- <fragment src="http://localhost:8081"></fragment>  -->
   <!-- demo -->
-  <!-- <fragment src="http://localhost:5000"></fragment> -->
+  <fragment src="http://localhost:5000"></fragment>
   <!-- <fragment src="http://localhost:7010"></fragment> -->
   
   </div>
