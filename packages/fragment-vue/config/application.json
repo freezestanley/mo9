@@ -1,0 +1,5 @@
+{
+    "library": "fragmentvue",
+    "type": "vue",
+    "publicPath": "http://localhost:7020/"
+}

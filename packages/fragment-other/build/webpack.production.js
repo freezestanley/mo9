@@ -57,13 +57,14 @@ module.exports = merge(baseWebpackConfig, {
                 }
             }
         }
-    },
-    externals: {
-        'react': 'react',
-        'react-dom': 'ReactDOM',
-        'prop-types': 'propTypes',
-        'classnames': 'classnames',
-        'proppy': 'proppy',
-        'proppy-react': 'proppyReact'
     }
+    // ,
+    // externals: {
+    //     'react': 'react',
+    //     'react-dom': 'ReactDOM',
+    //     'prop-types': 'propTypes',
+    //     'classnames': 'classnames',
+    //     'proppy': 'proppy',
+    //     'proppy-react': 'proppyReact'
+    // }
 })

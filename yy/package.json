@@ -1,12 +1,11 @@
 {
-  "name": "yinyang",
-  "version": "1.0.0",
+  "name": "ytesty",
+  "version": "1.0.7",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --colors --config webpack.config.js",
     "watch": "webpack -w",
-    "install": "npm i",
     "start": "node ."
   },
   "author": "",

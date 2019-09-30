@@ -52,28 +52,29 @@ class ctrlApps {
             // }
         )
     }
+    agentPopState () {
+        let _self = this
+        window.addEventListener('popstate', e=>{
+            _self.sonApplication.forEach(item=>{
+                if(item.app.canActive()) {
+                    item.mount()
+                } else{
+                    item.unmount()
+                }
+            })
+        })
+    }
 }
 
-const instanceApp = new ctrlApps()
-window.addEventListener('popstate', e=>{
-    instanceApp.sonApplication.forEach(item=>{
-        if(item.app.canActive()){
-            item.mount()
-        } else{
-            item.unmount()
-        }
-    })
-})
+// const instanceApp = new ctrlApps()
 
 const init = function () {
     window.addEventListener('load', function(e) {
         clearTemplate()
-        // const reapps = [ 
-        //     { name: 'other', entry: 'http://localhost:7010', contain: document.getElementById('other') } 
-        // ]
-        // instanceApp.registerApps(reapps)
     })
 }
 init ()
-export const app = instanceApp
+export default ctrlApps
+// exports.app = ctrlApps
+// export const app = ctrlApps
 

@@ -40,7 +40,8 @@ export function getSandbox(appName) {
             return target[name]
         },
         set: function (target, name, property) {
-            target[name] = property;
+            target[name] = property
+            return true
         }
     })
 

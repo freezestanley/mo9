@@ -75,6 +75,13 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  created () {
+    // 首先需要提前定义好事件，并且注册相关的EventListener
+      window.addEventListener('event_name', function(event){
+          console.log('得到标题为：', event.detail.title);
+      });
+      // 根据listener中的callback函数定义，应当会在console中输出 "得到标题为： This is title!"
   }
 };
 </script>

@@ -13,6 +13,13 @@
     }
   </style>
   <script>
+      debugger
+     var myEvent = new CustomEvent('event_name', { 
+          detail: { title: 'This is title!'},
+      });
+            // 随后在对应的元素上触发该事件
+      
+
     // (function(d) {
     //   require(d);
     //   var arr = [ 'react', 'react-dom', 'prop-types', 'classnames', 'proppy', 'proppy-react', 'antd', 'antdcss'];
@@ -53,9 +60,32 @@
               return location.pathname.startsWith('/other3/')
             }
           },
+          //  { 
+          //   name: 'helloworld',
+          //   application_name: 'helloworld',
+          //   entry: 'http://localhost:8020', 
+          //   contain: document.getElementById('helloworld'),  
+          //   baseUrl: '/helloworld',
+          //   canActive(){
+          //     return location.pathname.startsWith('/helloworld')
+          //   }
+          // }
         ]
         app.registerApps(reapps)
     }
+
+    window.addEventListener('event_name', function(event){
+          console.log('得到标题为：', event.detail.title);
+      });
+
+    function  copyEvent (e) {
+      debugger
+        if(window.dispatchEvent) {  
+            window.dispatchEvent(myEvent);
+        } else {
+            window.fireEvent(myEvent);
+        }
+      }
   </script>
 </head>
 <body>
@@ -66,6 +96,7 @@
   <div id="dashboard"></div>
 
   <div id="demo" class="demo"></div>
+  <div style="border:1px solid #000; padding:10px;text-align: center;background:#fff;" onclick="copyEvent()">触发事件</div>
   <div style="border:1px solid #000; padding:10px;text-align: center;background:#fff;" onclick="copyText()">添加子应用</div>
   <div><a href="javascript:;" onclick="history.pushState(null, null, '/other/about')">/other/about</a></div>
   <div><a href="javascript:;" onclick="history.pushState(null, null, '/other2/about')">/other2/about</a></div>
@@ -77,6 +108,8 @@
   <div id="other2"></div>
   <!--chat-->
   <div id="other3"></div>
+
+  <div id="helloworld"></div>
   <!--chat-->
   <div id="tailor_template">
   <!-- dashboard -->

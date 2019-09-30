@@ -1,16 +1,16 @@
 const selectorNamespace = require('postcss-selector-namespace')
-const component_nameSpace = require('./config/application').target
+const component_nameSpace = require('./config/application.json')
 const postcssNormalize = require('postcss-normalize')
 
 module.exports = {
-    publicPath: 'http://localhost:7020/',
+    publicPath: `${component_nameSpace.publicPath}`,
     css: {
         loaderOptions: {
             postcss: {
                 plugins: [
                     require('autoprefixer'),
                     require('postcss-import'),
-                    selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace}`, rootSelector: '' }),
+                    selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.library}`, rootSelector: '' }),
                     postcssNormalize({ forceImport: true })
                   ]
             }
@@ -19,7 +19,7 @@ module.exports = {
     configureWebpack: {
       output: {
         libraryTarget: 'umd',
-        library: 'fragmentvue'
+        library: component_nameSpace.library
       }
     }
   }

@@ -10,8 +10,10 @@ Vue.config.productionTip = false
 // }).$mount('#app')
 
 
-let instance = null;
+console.log('fragmet-vue:', window)
 
+
+window.instance = null;
 export async function bootstrap() {
   console.log('react app bootstraped');
 }
@@ -20,14 +22,17 @@ export async function mount(contain, baseUrl) {
   console.log('props from main framework', contain, baseUrl);
   const div = document.createElement('div');
   contain.appendChild(div);
-  instance = new Vue({
+  window.instance = new Vue({
     router: getRouter(baseUrl),
     render: h => h(App),
   }).$mount(div);
 }
 
 export async function unmount() {
-  instance.$destroy();
-  instance.$el.parentNode.removeChild(instance.$el);
-  instance = null;
+  console.log('============================================================')
+  console.log(window.instance)
+  window.instance.$destroy();
+  window.instance.$el.parentNode.removeChild(window.instance.$el);
+  // instance.$remove()
+  window.instance = null;
 }
