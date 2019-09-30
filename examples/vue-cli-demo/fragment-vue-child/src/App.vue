@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="child">
     <div>This is fragment-vue-child</div>
     <div @click="push">switch child hello</div>
     <div @click="push2">switch child world</div>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-#app {
+:namespace#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

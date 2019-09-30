@@ -3,13 +3,13 @@ const component_nameSpace = require('./config/application.json')
 const postcssNormalize = require('postcss-normalize')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
-    // publicPath: `${component_nameSpace.publicPath}`,
+const application = {
+    publicPath: `${component_nameSpace.publicPath}`,
     css: {
         loaderOptions: {
             postcss: {
                 plugins: [
-                    require('autoprefixer'),
+                    // require('autoprefixer'),
                     require('postcss-import'),
                     selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.library}`, rootSelector: '' }),
                     postcssNormalize({ forceImport: true })
@@ -39,3 +39,18 @@ module.exports = {
       ]
     }
   }
+  const development = {
+    css: {
+        loaderOptions: {
+            postcss: {
+                plugins: [
+                    require('autoprefixer'),
+                    require('postcss-import'),
+                    selectorNamespace({ selfSelector: ':namespace', namespace: ' ', rootSelector: '' }),
+                    postcssNormalize({ forceImport: true })
+                  ]
+            }
+        }
+    }
+  }
+  module.exports = process.env.APP_TYPE === 'application' ? application : development

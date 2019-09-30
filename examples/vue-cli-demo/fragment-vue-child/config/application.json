@@ -1,0 +1,6 @@
+{
+    "library": "child",
+    "type": "vue",
+    "publicPath": "http://localhost:8082/",
+    "port": 8082
+}
