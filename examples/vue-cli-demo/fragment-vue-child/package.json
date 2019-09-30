@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --host localhost --port 8082",
     "build": "vue-cli-service build",
     "rebuild": "vue-cli-service build --mode mft",
     "lint": "vue-cli-service lint",
-    "app": "node fragments.js"
+    "build_all": "npm run build && npm run rebuild",
+    "app": "nodemon fragments.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -24,8 +25,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "koa": "^2.8.2",
     "koa-static": "^5.0.0",
+    "koa-views": "^6.2.1",
     "koa2-cors": "^2.0.6",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.3",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   },

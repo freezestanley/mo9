@@ -3,20 +3,33 @@ const component_nameSpace = require('./config/application.json')
 const postcssNormalize = require('postcss-normalize')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const css = {
+    loaderOptions: {
+        postcss: {
+            plugins: [
+                // require('autoprefixer'),
+                require('postcss-import'),
+                selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.library}`, rootSelector: '' }),
+                postcssNormalize({ forceImport: true })
+              ]
+        }
+    }
+}
 const application = {
-    publicPath: `${component_nameSpace.publicPath}`,
-    css: {
-        loaderOptions: {
-            postcss: {
-                plugins: [
-                    // require('autoprefixer'),
-                    require('postcss-import'),
-                    selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.library}`, rootSelector: '' }),
-                    postcssNormalize({ forceImport: true })
-                  ]
-            }
+    pages: {
+        app: {
+            entry: 'src/main-app.js',
+            template: 'index.html',
+            filename: 'app.html',
+        },
+        index: {
+            entry: 'src/main.js',
+            template: 'index.html',
+            filename: 'index.html',
         }
     },
+    publicPath: `${component_nameSpace.publicPath}`,
+    css,
     configureWebpack: {
       output: {
         libraryTarget: 'umd',
@@ -40,17 +53,15 @@ const application = {
     }
   }
   const development = {
-    css: {
-        loaderOptions: {
-            postcss: {
-                plugins: [
-                    require('autoprefixer'),
-                    require('postcss-import'),
-                    selectorNamespace({ selfSelector: ':namespace', namespace: ' ', rootSelector: '' }),
-                    postcssNormalize({ forceImport: true })
-                  ]
-            }
-        }
-    }
+    pages: {
+        index: {
+            entry: 'src/main.js',
+            template: 'index.html',
+            filename: 'index.html',
+        },
+    },
+    css
   }
-  module.exports = process.env.APP_TYPE === 'application' ? application : development
+
+ 
+  module.exports = process.env.NODE_ENV === 'production' ? application : development
