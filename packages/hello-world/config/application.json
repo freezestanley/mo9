@@ -1,0 +1,5 @@
+{
+    "library": "helloworld",
+    "type": "vue",
+    "publicPath": "http://localhost:8020/"
+}
