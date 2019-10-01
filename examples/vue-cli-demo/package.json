@@ -1,0 +1,20 @@
+{
+  "name": "vue-cli-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:fragments": "lerna run --parallel app",
+    "build:fragments": "lerna run --parallel rebuild",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  }
+}
