@@ -13,23 +13,15 @@ const PORT = config.port
 app.use(cors())
 app.use(serve('dist'))
 app.use(views(path.resolve(__dirname, './dist')))
-app.use(async function (ctx) {
+app.use(async function (ctx, next) {
     if (ctx.req.url === '/app') {
         return await ctx.render('app')
     } else {
         return await ctx.render('index')
     }
+    next()
   })
-// app.use(async function(ctx, next) {
-//     console.log(ctx.req.url)
-//     if (ctx.req.url === '/app') {
-//         await ctx.render('app.html')
-//     } else {
-//         await ctx.render('app.html')
-//     }
-    
-//     next()
-//   })
+
 
 app.listen(PORT, () => {
   console.log(`SPA Fragment Server started at ${PORT}`)
