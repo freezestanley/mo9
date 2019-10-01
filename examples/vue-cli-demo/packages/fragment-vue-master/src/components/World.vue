@@ -1,6 +1,7 @@
 <template>
   <div class="world">
     <div>this is master world</div>
+    <div>{{ $route.query.plan }}</div>
   </div>
 </template>
 

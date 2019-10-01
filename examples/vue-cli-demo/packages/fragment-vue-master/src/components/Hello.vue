@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <div>this is master Hello</div>
+    <div>{{ $route.params.userId }}</div>
   </div>
 </template>
 

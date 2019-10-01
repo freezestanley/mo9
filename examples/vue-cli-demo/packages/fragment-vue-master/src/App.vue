@@ -22,10 +22,16 @@ export default {
   name: 'app',
   methods: {
     push() {
-      this.$router.push('/hello')
+      this.$router.push({
+        name:'hello',
+        params: { userId: '123' }
+      })
     },
     push2() {
-      this.$router.push('/world')
+      this.$router.push({
+        path: "/world",
+        query: { plan: 'private' }
+      })
     },
     push3() {
       this.$router.push('/other2/hello')
@@ -37,7 +43,7 @@ export default {
   mounted() {
     const appinfo = [
       {
-        name: "child",
+        name: "a1",
         application_name: "child",
         entry: "http://localhost:8082/app",
         contain: this.$refs.other2,
@@ -47,7 +53,7 @@ export default {
         }
       },
       {
-        name: "child",
+        name: "a2",
         application_name: "child",
         entry: "http://localhost:8082/app",
         contain: this.$refs.other3,
