@@ -48,7 +48,7 @@ export default {
         contain: this.$refs.other2,
         baseUrl: "/other2",
         canActive() {
-          return location.pathname.startsWith("/child/other2");
+          return location.pathname.startsWith("/other2");
         }
       },
       {
@@ -58,11 +58,11 @@ export default {
         contain: this.$refs.other3,
         baseUrl: "/other3",
         canActive() {
-          return location.pathname.startsWith("/child/other3");
+          return location.pathname.startsWith("/other3");
         }
       }
     ]
-    yyapp.baseUrl = '/child'
+    yyapp.baseUrl = ''
     yyapp.registerApps(appinfo)
   },
   components: {
