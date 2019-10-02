@@ -11,9 +11,7 @@ globalEvent.on('global-test-event', function(e){
   Vue.config.productionTip = false
   let instance = null;
 
-
   export default {
-    app: yyapp,
     bootstrap: async function bootstrap() {
       console.log('react app bootstraped');
     },
@@ -27,7 +25,9 @@ globalEvent.on('global-test-event', function(e){
       }).$mount(div);
     },
     unmount: async function unmount() {
-      console.log('============================================================')
+      yyapp.sonApplication.map((ele) => {
+        ele.unmount()
+      })
       instance.$destroy();
       instance.$el.parentNode.removeChild(instance.$el);
       instance = null;
