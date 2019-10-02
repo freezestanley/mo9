@@ -5,6 +5,6 @@ import Router from './router'
 Vue.config.productionTip = false
 
   new Vue({
-    router: Router('child'),
+    router: Router(),
     render: h => h(App),
   }).$mount('#app')
