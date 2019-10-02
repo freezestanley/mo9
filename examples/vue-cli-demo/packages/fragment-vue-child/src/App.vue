@@ -16,19 +16,8 @@
 import chaoxi, { globalEvent } from 'chaoxi'
 export default {
   name: 'app',
-  methods: {
-    push() {
-      this.$router.push({
-        path: 'hello'
-      })
-    },
-    push2() {
-      this.$router.push({
-        path: 'world'
-      })
-    },
-    grandchild() {
-      debugger
+  mounted() {
+    debugger
         const appinfo = [
         {
           name: "a3",
@@ -43,8 +32,17 @@ export default {
       ]
       chaoxi.baseUrl = '/other2'
       chaoxi.registerApps(appinfo)
+
+  },
+  methods: {
+    push() {
       this.$router.push({
-        path: 'grandson'
+        path: 'hello'
+      })
+    },
+    push2() {
+      this.$router.push({
+        path: 'world'
       })
     },
     handleClick(){
@@ -53,6 +51,11 @@ export default {
     },
     handleClick2(){
       chaoxi.emit('instance-test-event', 'message from internal')
+    },
+    grandchild () {
+      this.$router.push({
+        path: '/grandson'
+      })
     }
   },
   components: {
