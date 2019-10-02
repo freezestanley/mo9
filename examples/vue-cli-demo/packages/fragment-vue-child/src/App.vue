@@ -3,13 +3,15 @@
     <div>This is fragment-vue-child</div>
     <div @click="push">switch child hello</div>
     <div @click="push2">switch child world</div>
+    <div @click="handleClick">Trigger Global Event</div>
+    <div @click="handleClick2">Trigger Instance Event</div>
     <div>==============================================</div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-
+import chaoxi, { globalEvent } from 'chaoxi'
 export default {
   name: 'app',
   methods: {
@@ -22,6 +24,12 @@ export default {
       this.$router.push({
         path: 'world'
       })
+    },
+    handleClick(){
+      globalEvent.emit('global-test-event', 'message from fragment-vue-child')
+    },
+    handleClick2(){
+      chaoxi.emit('instance-test-event', 'message from internal')
     }
   },
   components: {

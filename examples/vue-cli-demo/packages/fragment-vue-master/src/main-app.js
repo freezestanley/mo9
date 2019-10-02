@@ -2,7 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from './router'
 import Config from '../config/application.json'
-import yyapp from 'chaoxi'
+import { globalEvent } from 'chaoxi'
+
+globalEvent.on('global-test-event', function(e){
+  alert( 'global-test-event:' + e)
+})
 
   Vue.config.productionTip = false
   let instance = null;
