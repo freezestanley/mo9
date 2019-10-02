@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from './router'
 import Config from '../config/application.json'
+import chaoxi from 'chaoxi'
+
+chaoxi.on('instance-test-event', e=>{
+  alert('instance-test-event: ' + e)
+})
 
 Vue.config.productionTip = false
 
