@@ -10,24 +10,27 @@ chaoxi.on('instance-test-event', e=>{
 
 Vue.config.productionTip = false
 
-  window.instance = null;
-  export async function bootstrap() {
-    console.log('react app bootstraped');
-  }
+let instance = null;
 
-  export async function mount(contain, baseUrl) {
+export default {
+  bootstrap: async function bootstrap() {
+    console.log('react app bootstraped');
+  },
+  mount: async function mount(contain, baseUrl) {
     console.log('props from main framework', contain, baseUrl);
     const div = document.createElement('div');
     contain.appendChild(div);
-    window.instance = new Vue({
+    instance = new Vue({
       router: Router(baseUrl),
       render: h => h(App),
     }).$mount(div);
+  },
+  unmount: async function unmount() {
+    chaoxi.sonApplication.map((ele) => {
+      ele.unmount()
+    })
+    instance.$destroy();
+    instance.$el.parentNode.removeChild(instance.$el);
+    instance = null;
   }
-
-  export async function unmount() {
-    console.log('============================================================')
-    window.instance.$destroy();
-    window.instance.$el.parentNode.removeChild(window.instance.$el);
-    window.instance = null;
-  }
+}
