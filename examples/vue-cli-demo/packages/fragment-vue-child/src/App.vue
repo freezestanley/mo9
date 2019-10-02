@@ -5,7 +5,9 @@
     <div @click="push2">switch child world</div>
     <div @click="handleClick">Trigger Global Event</div>
     <div @click="handleClick2">Trigger Instance Event</div>
+    <div @click="grandchild">grandchild</div>
     <div>==============================================</div>
+    <div ref="grandson" id="grandson"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -25,7 +27,25 @@ export default {
         path: 'world'
       })
     },
+    grandchild() {
+      debugger
+        const appinfo = [
+        {
+          name: "a3",
+          application_name: "grandson",
+          entry: "http://localhost:8099/app",
+          contain: this.$refs.grandson,
+          baseUrl: "/grandson",
+          canActive() {
+            return location.pathname.startsWith("/child/other2/grandson");
+          }
+        }
+      ]
+      chaoxi.baseUrl = '/other2'
+      chaoxi.registerApps(appinfo)
+    },
     handleClick(){
+      alert('asdfasdfasdf')
       globalEvent.emit('global-test-event', 'message from fragment-vue-child')
     },
     handleClick2(){
