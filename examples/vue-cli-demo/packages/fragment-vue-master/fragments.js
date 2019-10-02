@@ -12,6 +12,7 @@ const PORT = config.port
 
 app.use(cors())
 app.use(serve('dist'))
+app.use(serve('../fragment-vue-child/dist'))
 app.use(views(path.resolve(__dirname, './dist')))
 app.use(async function (ctx, next) {
     if (ctx.req.url === '/app') {

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Hello from '@/components/Hello.vue';
-import World from '@/components/World.vue';
+// import World from '@/components/World.vue';
 Vue.use(Router)
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -21,7 +21,7 @@ export default function getRouter(base) {
       {
         path: '/world',
         name: 'world',
-        component: World
+        component: () => import('@/components/World.vue')
       }
     ]
   })

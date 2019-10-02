@@ -10,6 +10,10 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created () {
+    console.log('=====window=======')
+    console.log(window)
   }
 }
 </script>

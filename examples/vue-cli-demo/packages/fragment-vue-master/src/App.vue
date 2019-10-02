@@ -17,7 +17,6 @@
 <script>
 import yyapp from 'chaoxi'
 
-
 export default {
   name: 'app',
   methods: {
@@ -65,8 +64,6 @@ export default {
     ]
     yyapp.baseUrl = '/child'
     yyapp.registerApps(appinfo)
-    console.log(yyapp)
-    yyapp.agentPopState()
   },
   components: {
   }
