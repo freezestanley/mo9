@@ -1,0 +1,5 @@
+{
+    "library": "grandson",
+    "publicPath": "http://localhost:8099/",
+    "port": 8099
+}
