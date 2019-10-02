@@ -37,12 +37,15 @@ export default {
           contain: this.$refs.grandson,
           baseUrl: "/grandson",
           canActive() {
-            return location.pathname.startsWith("/child/other2/grandson");
+            return location.pathname.startsWith("/other2/grandson");
           }
         }
       ]
       chaoxi.baseUrl = '/other2'
       chaoxi.registerApps(appinfo)
+      this.$router.push({
+        path: 'grandson'
+      })
     },
     handleClick(){
       alert('asdfasdfasdf')
