@@ -31,6 +31,7 @@ const application = {
     publicPath: `${component_nameSpace.publicPath}`,
     css,
     configureWebpack: {
+      mode: 'development',
       output: {
         libraryTarget: 'umd',
         library: component_nameSpace.library
