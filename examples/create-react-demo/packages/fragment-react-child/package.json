@@ -64,8 +64,8 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "cross-env PORT=5009 node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "cross-env PORT=5009 REACT_APP_TYPE=application node scripts/start.js",
+    "build": "cross-env REACT_APP_TYPE=application node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {

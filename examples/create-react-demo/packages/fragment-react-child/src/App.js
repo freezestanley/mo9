@@ -19,7 +19,7 @@ function App() {
             </li>
           </ul>
         </nav>
-
+        =========={process.env.REACT_APP_TYPE}===========
         <Route path="/index" exact component={Index} />
         <Route path="/about" component={About} />
       </div>
