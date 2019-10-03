@@ -200,6 +200,8 @@ module.exports = function(webpackEnv) {
       // this defaults to 'window', but by setting it to 'this' then
       // module chunks which are built will work in web workers as well.
       globalObject: 'this',
+      libraryTarget: 'umd',
+      library: 'reactChild'
     },
     optimization: {
       minimize: isEnvProduction,
