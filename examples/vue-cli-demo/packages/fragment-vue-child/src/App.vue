@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import chaoxi, { globalEvent } from 'chaoxi'
+import Chaoxi, {globalEvent} from './global'
 export default {
   name: 'app',
   mounted() {
@@ -26,12 +26,14 @@ export default {
           contain: this.$refs.grandson,
           baseUrl: "/grandson",
           canActive() {
+            debugger
+            console.log('@@@@@@@@@@@@@@###')
             return location.pathname.startsWith("/other2/grandson");
           }
         }
       ]
-      chaoxi.baseUrl = '/other2'
-      chaoxi.registerApps(appinfo)
+      Chaoxi.baseUrl = '/other2'
+      Chaoxi.registerApps(appinfo)
 
   },
   methods: {
@@ -50,7 +52,7 @@ export default {
       globalEvent.emit('global-test-event', 'message from fragment-vue-child')
     },
     handleClick2(){
-      chaoxi.emit('instance-test-event', 'message from internal')
+      Chaoxi.emit('instance-test-event', 'message from internal')
     },
     grandchild () {
       this.$router.push({

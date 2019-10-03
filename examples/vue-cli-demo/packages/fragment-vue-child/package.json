@@ -10,7 +10,7 @@
     "app": "nodemon fragments.js"
   },
   "dependencies": {
-    "chaoxi": "^1.0.41",
+    "chaoxi": "^1.0.49",
     "core-js": "^2.6.9",
     "cross-env": "^6.0.0",
     "vue": "^2.6.10",

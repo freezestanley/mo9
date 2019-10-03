@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from './router'
 import Config from '../config/application.json'
-import chaoxi from 'chaoxi'
+import Chaoxi, {globalEvent} from './global'
 
-chaoxi.on('instance-test-event', e=>{
+Chaoxi.on('instance-test-event', e=>{
   alert('instance-test-event: ' + e)
 })
 
@@ -26,7 +26,7 @@ export default {
     }).$mount(div);
   },
   unmount: async function unmount() {
-    chaoxi.sonApplication.map((ele) => {
+    Chaoxi.sonApplication.map((ele) => {
       ele.unmount()
     })
     instance.$destroy();
