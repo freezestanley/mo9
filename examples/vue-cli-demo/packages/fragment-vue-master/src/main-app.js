@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from './router'
 import Config from '../config/application.json'
-import yyapp, { globalEvent } from 'chaoxi'
+import Chaoxi, {globalEvent} from './global'
 
 globalEvent.on('global-test-event', function(e){
   alert( 'global-test-event:' + e)
@@ -25,7 +25,7 @@ globalEvent.on('global-test-event', function(e){
       }).$mount(div);
     },
     unmount: async function unmount() {
-      yyapp.sonApplication.map((ele) => {
+      Chaoxi.sonApplication.map((ele) => {
         ele.unmount()
       })
       instance.$destroy();

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import yyapp from 'chaoxi'
+import Chaoxi, {globalEvent} from './global'
 
 export default {
   name: 'app',
@@ -36,7 +36,8 @@ export default {
       this.$router.push('/other2/hello')
     },
     push4() {
-      this.$router.push('/other3/hello')
+      // this.$router.push('/other3/hello')
+      this.$router.push('/grandson/hello')
     }
   },
   mounted() {
@@ -52,18 +53,29 @@ export default {
         }
       },
       {
-        name: "a2",
-        application_name: "child",
-        entry: "http://localhost:8082/app",
-        contain: this.$refs.other3,
-        baseUrl: "/other3",
-        canActive() {
-          return location.pathname.startsWith("/other3");
-        }
+          name: "a44",
+          application_name: "grandson",
+          entry: "http://localhost:8099/app",
+          contain: this.$refs.other3,
+          baseUrl: "/grandson",
+          canActive() {
+            debugger
+            return location.pathname.startsWith("/grandson");
+          }
       }
+      // {
+      //   name: "a2",
+      //   application_name: "child",
+      //   entry: "http://localhost:8082/app",
+      //   contain: this.$refs.other3,
+      //   baseUrl: "/other3",
+      //   canActive() {
+      //     return location.pathname.startsWith("/other3");
+      //   }
+      // }
     ]
-    yyapp.baseUrl = ''
-    yyapp.registerApps(appinfo)
+    Chaoxi.baseUrl = ''
+    Chaoxi.registerApps(appinfo)
   },
   components: {
   }
