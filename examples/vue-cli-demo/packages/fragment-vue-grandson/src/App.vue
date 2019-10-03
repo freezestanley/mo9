@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import chaoxi, { globalEvent } from 'chaoxi'
+import Chaoxi, {globalEvent} from './global'
 export default {
   name: 'app',
   methods: {
@@ -29,7 +29,7 @@ export default {
       globalEvent.emit('global-test-event', 'message from fragment-vue-child')
     },
     handleClick2(){
-      chaoxi.emit('instance-test-event', 'message from internal')
+      Chaoxi.emit('instance-test-event', 'message from internal')
     }
   },
   components: {
