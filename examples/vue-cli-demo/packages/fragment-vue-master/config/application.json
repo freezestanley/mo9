@@ -1,4 +1,7 @@
 {
+    "name": "master",
+    "baseUrl": "",
+    "classNamespace": "master",
     "library": "master",
     "publicPath": "http://localhost:8090/",
     "port": 8090,

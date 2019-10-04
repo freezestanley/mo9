@@ -7,10 +7,12 @@
     "build": "vue-cli-service build",
     "rebuild": "vue-cli-service build --mode mft",
     "lint": "vue-cli-service lint",
-    "app": "nodemon fragments.js"
+    "app": "nodemon fragments.js",
+    "build:app": "yarn run rebuild && yarn run app",
+    "chaoxi": "yarn && yarn run build:app"
   },
   "dependencies": {
-    "chaoxi": "^1.0.50",
+    "chaoxi": "^1.0.56",
     "core-js": "^2.6.9",
     "cross-env": "^6.0.0",
     "vue": "^2.6.10",

@@ -9,7 +9,7 @@ const css = {
             plugins: [
                 // require('autoprefixer'),
                 require('postcss-import'),
-                selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.library}`, rootSelector: '' }),
+                selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.classNamespace}`, rootSelector: '' }),
                 postcssNormalize({ forceImport: true })
               ]
         }

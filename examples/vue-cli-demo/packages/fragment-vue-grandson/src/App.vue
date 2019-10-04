@@ -16,6 +16,7 @@ export default {
   name: 'app',
   methods: {
     push() {
+      debugger
       this.$router.push({
         path: 'aa'
       })

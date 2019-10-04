@@ -1,0 +1,13 @@
+{
+  "name": "create-react-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "update:chaoxi": "lerna run --parallel chaoxi",
+    "build:app": "lerna run --parallel build:app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

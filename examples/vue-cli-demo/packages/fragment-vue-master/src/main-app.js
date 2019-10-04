@@ -15,7 +15,7 @@ globalEvent.on('global-test-event', function(e){
     bootstrap: async function bootstrap() {
       console.log('react app bootstraped');
     },
-    mount: async function mount(contain, baseUrl) {
+    mount: async function mount(contain, baseUrl, appinfo) {
       console.log('props from main framework', contain, baseUrl);
       const div = document.createElement('div');
       contain.appendChild(div);

@@ -6,14 +6,12 @@
   "scripts": {
     "start:fragments": "lerna run --parallel app",
     "build:fragments": "lerna run --parallel rebuild",
+    "update:chaoxi": "lerna run --parallel chaoxi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "workspaces": [
-    "packages/*"
-  ],
   "devDependencies": {
     "lerna": "^3.16.4"
   }

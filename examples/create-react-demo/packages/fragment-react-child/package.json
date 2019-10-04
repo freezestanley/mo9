@@ -14,6 +14,7 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "chaoxi": "^1.0.56",
     "cross-env": "^6.0.3",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
@@ -64,9 +65,12 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "cross-env PORT=5009 REACT_APP_TYPE=application node scripts/start.js",
+    "start": "cross-env PORT=5000 REACT_APP_TYPE=application node scripts/start.js",
     "build": "cross-env REACT_APP_TYPE=application node scripts/build.js",
-    "test": "node scripts/test.js"
+    "app": "node fragments.js",
+    "test": "node scripts/test.js",
+    "build:app": "yarn run build && yarn run app",
+    "chaoxi": "yarn && yarn run build:app"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -135,5 +139,13 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "koa": "^2.8.2",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.1",
+    "koa2-cors": "^2.0.6",
+    "koa2-static": "^1.0.1",
+    "postcss-selector-namespace": "^3.0.1"
   }
 }

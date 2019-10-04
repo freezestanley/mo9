@@ -4,11 +4,12 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Index from './components/Index'
 import About from './components/Home'
-function App() {
+
+function App({baseUrl}) {
   return (
-    <Router>
+    <Router basename={baseUrl}>
       <div className="App">
-        <h2>This is React</h2>
+        <h2>This is child React</h2>
         <nav>
           <ul>
             <li>

@@ -1,4 +1,7 @@
 {
+    "name": "child",
+    "baseUrl": "/other2",
+    "classNamespace": "child",
     "library": "child",
     "publicPath": "http://localhost:8082/",
     "port": 8082

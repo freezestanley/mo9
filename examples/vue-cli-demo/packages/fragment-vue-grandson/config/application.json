@@ -1,4 +1,7 @@
 {
+    "name": "grandson",
+    "baseUrl": "/grandson",
+    "classNamespace": "grandson",
     "library": "grandson",
     "publicPath": "http://localhost:8099/",
     "port": 8099
