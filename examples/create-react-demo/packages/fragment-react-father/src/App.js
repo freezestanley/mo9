@@ -31,7 +31,7 @@ function App({baseUrl}) {
           </ul>
         </nav>
   
-        <Route path="/reactchild" exact component={Home} />
+        <Route path="/reactchild" component={Home} />
         <Route path="/index" component={Index} />
       </div>
     </Router>
