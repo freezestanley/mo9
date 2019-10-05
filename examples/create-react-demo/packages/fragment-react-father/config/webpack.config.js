@@ -318,6 +318,8 @@ module.exports = function(webpackEnv) {
             // Added for profiling in devtools
             keep_classnames: isEnvProductionProfile,
             keep_fnames: isEnvProductionProfile,
+            drop_debugger: false,
+            drop_console: false,
             output: {
               ecma: 5,
               comments: false,
