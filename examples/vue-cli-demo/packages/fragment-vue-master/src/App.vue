@@ -49,7 +49,7 @@ export default {
     },
     push5() {
       // this.$router.push('/other3/hello')
-      this.$router.push('/reactchild')
+      this.$router.push('/reactfather')
     }
   },
   mounted() {
@@ -71,19 +71,18 @@ export default {
           contain: this.$refs.other3,
           baseUrl: "/grandson",
           canActive() {
-            debugger
             return location.pathname.startsWith("/grandson");
           }
       },
       {
           name: "a45",
-          application_name: "reactchild",
-          entry: "http://localhost:5000/app",
+          application_name: "reactfather",
+          entry: "http://localhost:5020/app",
           contain: this.$refs.other3,
-          baseUrl: "/reactchild",
+          baseUrl: "/reactfather",
           canActive() {
             debugger
-            return location.pathname.startsWith("/reactchild");
+            return location.pathname.startsWith("/reactfather");
           }
       },
       // {

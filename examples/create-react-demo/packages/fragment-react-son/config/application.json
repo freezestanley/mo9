@@ -1,4 +1,7 @@
 {
+    "name": "reactson",
+    "baseUrl": "/reactson",
+    "classNamespace": "reactson",
     "library": "reactson",
     "publicPath": "http://localhost:5010",
     "port": 5010

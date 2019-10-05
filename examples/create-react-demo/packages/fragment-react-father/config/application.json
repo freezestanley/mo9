@@ -1,4 +1,7 @@
 {
+    "name": "reactfather",
+    "baseUrl": "",
+    "classNamespace": "reactfather",
     "library": "reactfather",
     "publicPath": "http://localhost:5020",
     "port": 5020

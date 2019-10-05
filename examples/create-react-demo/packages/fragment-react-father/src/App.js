@@ -1,28 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Index from './components/Index'
-import About from './components/Home'
+import Home from './components/Home'
+import Chaoxi, {globalEvent} from './global'
 
 function App({baseUrl}) {
   return (
     <Router basename={baseUrl}>
-      <div className="App">
-        <h2>This is father React</h2>
+      <div className={`App ${Chaoxi.classNamespace}`}>
+        <h2>This is father React {baseUrl}</h2>
         <nav>
           <ul>
             <li>
-              <Link to="/index">Home</Link>
+              <Link to="/reactchild">child</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/index">index</Link>
             </li>
           </ul>
         </nav>
-        =========={process.env.REACT_APP_TYPE}===========
-        <Route path="/index" exact component={Index} />
-        <Route path="/about" component={About} />
+  
+        <Route path="/reactchild" exact component={Home} />
+        <Route path="/index" component={Index} />
       </div>
     </Router>
   );

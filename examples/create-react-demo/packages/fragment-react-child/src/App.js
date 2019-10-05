@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Index from './components/Index'
 import About from './components/Home'
@@ -13,10 +13,10 @@ function App({baseUrl}) {
         <nav>
           <ul>
             <li>
-              <Link to="/index">Home</Link>
+              <Link to="/index">index</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">加载孙组件</Link>
             </li>
           </ul>
         </nav>

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="child">
+  <div id="app" :class="name">
     <div>This is fragment-vue-child</div>
     <div @click="push">switch child hello</div>
     <div @click="push2">switch child world</div>
@@ -16,6 +16,11 @@
 import Chaoxi, {globalEvent} from './global'
 export default {
   name: 'app',
+   data: function () {
+    return {
+      name: Chaoxi.classNamespace
+    }
+  },
   mounted() {
     debugger
         const appinfo = [

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="grandson">
+  <div id="app" :class="name">
     <div>This is grandson</div>
     <div @click="push">switch grandson hello</div>
     <div @click="push2">switch grandson world</div>
@@ -14,6 +14,11 @@
 import Chaoxi, {globalEvent} from './global'
 export default {
   name: 'app',
+  data: function () {
+    return {
+      name: Chaoxi.classNamespace
+    }
+  },
   methods: {
     push() {
       debugger

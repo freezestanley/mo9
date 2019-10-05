@@ -14,7 +14,7 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
-    "chaoxi": "^1.0.56",
+    "chaoxi": "^1.0.61",
     "cross-env": "^6.0.3",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
@@ -70,7 +70,7 @@
     "app": "node fragments.js",
     "test": "node scripts/test.js",
     "build:app": "yarn run build && yarn run app",
-    "chaoxi": "yarn && yarn run build:app"
+    "chaoxi": "yarn add chaoxi -S && yarn && yarn run build:app"
   },
   "eslintConfig": {
     "extends": "react-app"

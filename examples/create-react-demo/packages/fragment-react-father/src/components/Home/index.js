@@ -1,19 +1,38 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import Chaoxi, {globalEvent} from '../../global'
 
-// export default class Home extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <a href='/index'>回到home</a>
-//                 <a href='/home'>去detail</a>
-//             </div>
-//         )
-//     }
-// }
-const Home = () => (
-    <div>
-      <div>this is Home</div>
-    </div>
-  )
-  export default withRouter(Home)
+class Foo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handle = this.handle.bind(this);
+  }
+  componentDidMount() {
+    const appinfo = [
+      {
+          name: "a49",
+          application_name: "reactchild",
+          entry: "http://localhost:5000/app",
+          contain: this.refs.container,
+          baseUrl: "/reactchild",
+          canActive() {
+            debugger
+            return window.location.pathname.startsWith("/reactchild");
+          }
+      }
+    ]
+    Chaoxi.registerApps(appinfo)
+  }
+  render() {
+    return <div>
+            <input ref={el => {this.eleInput = el}}/>
+            <button onClick = {this.handle}>聚焦</button>
+            <div ref="container"></div>
+           </div>
+  }
+  
+  handle() {
+    this.eleInput.focus();
+  }
+}
+  export default withRouter(Foo)

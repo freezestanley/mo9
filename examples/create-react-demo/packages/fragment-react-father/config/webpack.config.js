@@ -115,7 +115,7 @@ module.exports = function(webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             postcssNormalize(),
-            selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.library}`, rootSelector: '' }),
+            selectorNamespace({ selfSelector: ':namespace', namespace: `.${component_nameSpace.classNamespace}`, rootSelector: '' }),
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },

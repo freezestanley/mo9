@@ -9,10 +9,10 @@
     "lint": "vue-cli-service lint",
     "app": "nodemon fragments.js",
     "build:app": "yarn run rebuild && yarn run app",
-    "chaoxi": "yarn && yarn run build:app"
+    "chaoxi": "yarn add chaoxi -S && yarn && yarn run build:app"
   },
   "dependencies": {
-    "chaoxi": "^1.0.56",
+    "chaoxi": "^1.0.61",
     "core-js": "^2.6.5",
     "cross-env": "^6.0.0",
     "vue": "^2.6.10",
