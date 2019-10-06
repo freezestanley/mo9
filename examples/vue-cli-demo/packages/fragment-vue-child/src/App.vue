@@ -33,11 +33,10 @@ export default {
           canActive(path) {
             debugger
             console.log('@@@@@@@@@@@@@@###')
-            return location.pathname.startsWith("/other2/grandson");
+            return location.pathname.startsWith(this.baseUrl);
           }
         }
       ]
-      Chaoxi.baseUrl = '/other2'
       Chaoxi.registerApps(appinfo)
 
   },

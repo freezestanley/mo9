@@ -15,6 +15,7 @@ export default {
   },
   mount: async function mount(contain, baseUrl, appinfo, parent) {
     Chaoxi.parent = parent
+    Chaoxi.baseUrl = baseUrl;
     ReactDOM.render(<App baseUrl={baseUrl} appinfo={appinfo}/>, contain)
    
   },

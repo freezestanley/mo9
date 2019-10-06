@@ -18,6 +18,7 @@ globalEvent.on('global-test-event', function(e){
     },
     mount: async function mount(contain, baseUrl, appinfo) {
       console.log('props from main framework', contain, baseUrl);
+      Chaoxi.baseUrl = baseUrl;
       const div = document.createElement('div');
       contain.appendChild(div);
       instance = new Vue({

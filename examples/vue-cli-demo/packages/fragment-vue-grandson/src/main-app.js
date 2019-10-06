@@ -20,6 +20,7 @@ export default {
   mount: async function mount(contain, baseUrl, appinfo, fragment) {
     Chaoxi.parent = parent
     console.log('props from main framework', contain, baseUrl);
+    Chaoxi.baseUrl = baseUrl;
     const div = document.createElement('div');
     contain.appendChild(div);
     instance = new Vue({

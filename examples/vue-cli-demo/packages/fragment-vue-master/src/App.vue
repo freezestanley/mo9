@@ -61,7 +61,7 @@ export default {
         contain: this.$refs.other2,
         baseUrl: "/other2",
         canActive(path) {
-          return location.pathname.startsWith("/other2");
+          return location.pathname.startsWith(this.baseUrl);
         }
       },
       {
@@ -71,7 +71,7 @@ export default {
           contain: this.$refs.other3,
           baseUrl: "/grandson",
           canActive(path) {
-            return location.pathname.startsWith("/grandson");
+            return location.pathname.startsWith(this.baseUrl);
           }
       },
       {
@@ -81,10 +81,11 @@ export default {
           contain: this.$refs.other3,
           baseUrl: "/reactfather",
           canActive(path) {
-            debugger
             console.log(Chaoxi)
             console.log(Chaoxi.fullUrl)
-            return location.pathname.startsWith("/reactfather");
+            // baseUrl 会被chapxi重写成包含父路径
+            // 所以这里可以直接使用
+            return location.pathname.startsWith(this.baseUrl);
           }
       },
       // {
