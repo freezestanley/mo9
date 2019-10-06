@@ -8,16 +8,17 @@ class Foo extends React.Component {
     this.handle = this.handle.bind(this);
   }
   componentDidMount() {
+    console.log("123123123123123123123")
     const appinfo = [
       {
-          name: "a66",
+          name: "a86",
           application_name: "reactson",
           entry: "http://localhost:5010/app",
           contain: this.refs.container,
-          baseUrl: "/reactson",
+          baseUrl: "/about",
           canActive() {
             debugger
-            return window.location.pathname.startsWith("/reactson");
+            return window.location.pathname.startsWith(`${Chaoxi.info.baseUrl}/about`);
           }
       }
     ]

@@ -4,11 +4,12 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Index from './components/Index'
 import About from './components/Home'
+import Chaoxi, {globalEvent} from './global'
 
 function App({baseUrl}) {
   return (
     <Router basename={baseUrl}>
-      <div className="App">
+      <div className={`App ${Chaoxi.classNamespace}`}>
         <h2>This is React son</h2>
         <nav>
           <ul>
