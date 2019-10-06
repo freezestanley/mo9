@@ -9,10 +9,12 @@ import Chaoxi, {globalEvent} from './global'
 
 console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@1')
 export default {
-  bootstrap: async function bootstrap() {
+  bootstrap: async function bootstrap(parent) {
     console.log('react app bootstraped');
+    Chaoxi.parent = parent
   },
-  mount: async function mount(contain, baseUrl, appinfo) {
+  mount: async function mount(contain, baseUrl, appinfo, parent) {
+    Chaoxi.parent = parent
     ReactDOM.render(<App baseUrl={baseUrl} appinfo={appinfo}/>, contain)
    
   },

@@ -16,9 +16,12 @@ class Foo extends React.Component {
           entry: "http://localhost:5010/app",
           contain: this.refs.container,
           baseUrl: "/about",
-          canActive() {
+          canActive(path) {
             debugger
-            return window.location.pathname.startsWith(`${Chaoxi.info.baseUrl}/about`);
+            console.log('ppppppppppppppp')
+            console.log(Chaoxi)
+            console.log(Chaoxi.fullUrl)
+            return window.location.pathname.startsWith(this.baseUrl);
           }
       }
     ]
