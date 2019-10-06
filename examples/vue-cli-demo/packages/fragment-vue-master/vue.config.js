@@ -50,7 +50,15 @@ const application = {
             // necessary to consistently work with multiple chunks via CommonsChunkPlugin
             chunksSortMode: 'dependency'
           })
-      ]
+      ],
+      externals: {
+        'react': 'react',
+        'react-dom': 'ReactDOM',
+        'chaoxi': 'chaoxi',
+        'react-router-dom': 'reactRouterDom',
+        'vue': 'vue',
+        'vue-router': 'vueRouter',
+      }
     }
   }
   const development = {

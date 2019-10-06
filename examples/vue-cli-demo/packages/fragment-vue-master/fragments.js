@@ -8,10 +8,13 @@ const Koa = require('koa')
 const views = require('@koa/cors')
 const app = new Koa()
 const config = require('./config/application.json')
+const compress = require('koa-compress')
 const PORT = config.port
 
 app.use(cors())
 app.use(serve('dist'))
+const options = { threshold: 2048 }
+app.use(compress())
 app.use(serve('../fragment-vue-child/dist'))
 app.use(views(path.resolve(__dirname, './dist')))
 app.use(async function (ctx, next) {
@@ -20,8 +23,7 @@ app.use(async function (ctx, next) {
     } else {
         return await ctx.render('index')
     }
-    next()
-  })
+})
 
 
 app.listen(PORT, () => {

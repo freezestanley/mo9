@@ -12,8 +12,9 @@ globalEvent.on('global-test-event', function(e){
   let instance = null;
 
   export default {
-    bootstrap: async function bootstrap() {
+    bootstrap: async function bootstrap(parent) {
       console.log('react app bootstraped');
+      Chaoxi.parent = parent
     },
     mount: async function mount(contain, baseUrl, appinfo) {
       console.log('props from main framework', contain, baseUrl);

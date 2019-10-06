@@ -12,7 +12,7 @@
     "chaoxi": "yarn add chaoxi -S && yarn && yarn run build:app"
   },
   "dependencies": {
-    "chaoxi": "^1.0.61",
+    "chaoxi": "^1.0.68",
     "core-js": "^2.6.9",
     "cross-env": "^6.0.0",
     "vue": "^2.6.10",
@@ -27,6 +27,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "koa": "^2.8.2",
+    "koa-compress": "^3.0.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.1",
     "koa2-cors": "^2.0.6",

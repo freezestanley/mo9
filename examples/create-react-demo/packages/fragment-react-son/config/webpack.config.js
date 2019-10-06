@@ -737,5 +737,13 @@ module.exports = function(webpackEnv) {
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
+    externals: isEnvProduction ? {
+        'react': 'react',
+        'react-dom': 'ReactDOM',
+        'chaoxi': 'chaoxi',
+        'react-router-dom': 'reactRouterDom',
+        'vue': 'vue',
+        'vue-router': 'vueRouter',
+      } : {}
   };
 };

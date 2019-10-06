@@ -8,20 +8,22 @@ const Koa = require('koa')
 const views = require('koa-views')
 const app = new Koa()
 const config = require('./config/application.json')
+const compress = require('koa-compress')
 const PORT = config.port
 
 app.use(cors())
 app.use(serve('dist'))
+const options = { threshold: 2048 }
+app.use(compress(options))
 app.use(views(path.resolve(__dirname, './dist')))
 app.use(async function (ctx, next) {
-    if (ctx.req.url === '/app') {
-        return await ctx.render('app')
-    } else {
-        return await ctx.render('index')
-    }
-    next()
-  })
-
+  if (ctx.req.url === '/app') {
+    return await ctx.render('app')
+  } else {
+    return await ctx.render('index')
+  }
+  next()
+})
 
 app.listen(PORT, () => {
   console.log(`SPA Fragment Server started at ${PORT}`)

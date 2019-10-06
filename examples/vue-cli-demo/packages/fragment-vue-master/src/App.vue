@@ -60,7 +60,7 @@ export default {
         entry: "http://localhost:8082/app",
         contain: this.$refs.other2,
         baseUrl: "/other2",
-        canActive() {
+        canActive(path) {
           return location.pathname.startsWith("/other2");
         }
       },
@@ -70,7 +70,7 @@ export default {
           entry: "http://localhost:8099/app",
           contain: this.$refs.other3,
           baseUrl: "/grandson",
-          canActive() {
+          canActive(path) {
             return location.pathname.startsWith("/grandson");
           }
       },
@@ -80,8 +80,10 @@ export default {
           entry: "http://localhost:5020/app",
           contain: this.$refs.other3,
           baseUrl: "/reactfather",
-          canActive() {
+          canActive(path) {
             debugger
+            console.log(Chaoxi)
+            console.log(Chaoxi.fullUrl)
             return location.pathname.startsWith("/reactfather");
           }
       },

@@ -13,10 +13,12 @@ Vue.config.productionTip = false
 let instance = null;
 
 export default {
-  bootstrap: async function bootstrap() {
+  bootstrap: async function bootstrap(parent) {
     console.log('react app bootstraped');
+    Chaoxi.parent = parent
   },
-  mount: async function mount(contain, baseUrl, appinfo) {
+  mount: async function mount(contain, baseUrl, appinfo, fragment) {
+    Chaoxi.parent = parent
     console.log('props from main framework', contain, baseUrl);
     const div = document.createElement('div');
     contain.appendChild(div);

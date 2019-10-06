@@ -30,7 +30,7 @@ export default {
           entry: "http://localhost:8099/app",
           contain: this.$refs.grandson,
           baseUrl: "/grandson",
-          canActive() {
+          canActive(path) {
             debugger
             console.log('@@@@@@@@@@@@@@###')
             return location.pathname.startsWith("/other2/grandson");
