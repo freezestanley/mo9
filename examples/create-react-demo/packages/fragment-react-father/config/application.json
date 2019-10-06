@@ -1,6 +1,6 @@
 {
     "name": "reactfather",
-    "baseUrl": "",
+    "baseUrl": "/reactfather",
     "classNamespace": "reactfather",
     "library": "reactfather",
     "publicPath": "http://localhost:5020",
