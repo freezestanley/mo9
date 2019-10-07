@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack -p",
     "watch": "webpack -w",
-    "app": "node fragment.js"
+    "app": "node fragment.js",
+    "chaoxi": "yarn add chaoxi -S && npm run build && node fragment.js"
   },
   "author": "",
   "license": "ISC",
@@ -43,7 +44,7 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
-    "chaoxi": "^1.0.68",
+    "chaoxi": "^1.0.79",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.2",

@@ -9,8 +9,8 @@ const plugins = [
     filename: '[name].css',
     chunkFilename: '[id].css'
   }),
-  new CompressionPlugin(),
-  new BundleAnalyzerPlugin({ analyzerPort: 8919 })
+  new CompressionPlugin()
+  // new BundleAnalyzerPlugin({ analyzerPort: 8919 })
 ]
 const cssextra = {
   loader: MiniCssExtractPlugin.loader,
