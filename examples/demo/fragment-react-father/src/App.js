@@ -7,7 +7,6 @@ import Home from './components/Home'
 import Chaoxi, {globalEvent} from './global'
 
 function App({baseUrl}) {
-  debugger
         var evtSource = new EventSource("http://localhost:5020/event");
         evtSource.onmessage = function(e) {
             console.log('onmsg: ' + e.data);
@@ -19,7 +18,7 @@ function App({baseUrl}) {
   return (
     <Router basename={baseUrl}>
       <div className={`App ${Chaoxi.classNamespace}`}>
-        <h2>This is father React {baseUrl}</h2>
+        {/* <h2>Tasdfasdf {baseUrl}</h2>
         <nav>
           <ul>
             <li>
@@ -29,10 +28,9 @@ function App({baseUrl}) {
               <Link to="/index">index</Link>
             </li>
           </ul>
-        </nav>
-  
+        </nav> */}
+        <Route path="/" component={Index} />
         <Route path="/reactchild" component={Home} />
-        <Route path="/index" component={Index} />
       </div>
     </Router>
   );
