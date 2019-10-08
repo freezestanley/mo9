@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Index from '@/pages/Notify';
+import Find from '@/pages/Find';
 
 
 Vue.use(Router)
@@ -17,17 +17,7 @@ export default function getRouter(base) {
       {
         path: '/',
         name: 'index',
-        component: Index
-      },
-      {
-        path: '/insure',
-        name: 'insure',
-        component: () => import('@/pages/Insure')
-      },
-      {
-        path: '/outOrder',
-        name: 'outOrder',
-        component: () => import('@/pages/outOrder')
+        component: Find
       },
     ]
   })
