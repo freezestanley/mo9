@@ -1635,10 +1635,10 @@ chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.4.1, chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chaoxi@^1.0.79:
-  version "1.0.79"
-  resolved "https://registry.yarnpkg.com/chaoxi/-/chaoxi-1.0.79.tgz#6290cb4ddee70ab02211954ea2ef301b55b5077b"
-  integrity sha512-5cE5KOqyxaa6RACn3ZbqiQsAN0me/lci6YgGBWwA266pVJTpwQFvM8i7DZYnKuQz61YPIfAH3HjRRj9RJJWwEA==
+chaoxi@^1.0.82:
+  version "1.0.82"
+  resolved "https://registry.yarnpkg.com/chaoxi/-/chaoxi-1.0.82.tgz#a6b2ce18398bcc144a3083aba3004c18aece9271"
+  integrity sha512-yvooxvNWUW9m0Xi9umJO1TNWmdwbHvBq6ZSaCVkz1TjzJnpY7XZhbWacDJSGk2NvYfzoQ0K7YgPpSHAMbtzgsg==
   dependencies:
     core-js "^3.2.1"
     eventemitter2 "^5.0.1"
