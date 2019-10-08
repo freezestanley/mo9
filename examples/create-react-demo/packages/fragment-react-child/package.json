@@ -14,7 +14,7 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
-    "chaoxi": "^1.0.68",
+    "chaoxi": "^1.0.82",
     "cross-env": "^6.0.3",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
@@ -143,6 +143,7 @@
   },
   "devDependencies": {
     "@koa/cors": "2",
+    "compression-webpack-plugin": "^3.0.0",
     "koa": "^2.8.2",
     "koa-compress": "^3.0.0",
     "koa-static": "^5.0.0",

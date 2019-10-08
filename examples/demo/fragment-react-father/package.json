@@ -67,7 +67,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "cross-env PORT=5020 REACT_APP_TYPE=application node scripts/start.js",
+    "start": "cross-env PORT=9100 REACT_APP_TYPE=application node scripts/start.js",
     "build": "cross-env REACT_APP_TYPE=application node scripts/build.js",
     "app": "node fragments.js",
     "test": "node scripts/test.js",

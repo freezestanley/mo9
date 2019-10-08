@@ -2,6 +2,7 @@ const selectorNamespace = require('postcss-selector-namespace')
 const component_nameSpace = require('./config/application.json')
 const postcssNormalize = require('postcss-normalize')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 const css = {
     loaderOptions: {
@@ -49,7 +50,8 @@ const application = {
             },
             // necessary to consistently work with multiple chunks via CommonsChunkPlugin
             chunksSortMode: 'dependency'
-          })
+          }),
+        new CompressionPlugin()
       ],
       externals: {
         'react': 'react',

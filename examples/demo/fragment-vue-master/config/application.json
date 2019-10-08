@@ -1,0 +1,9 @@
+{
+    "name": "master",
+    "baseUrl": "",
+    "classNamespace": "master",
+    "library": "master",
+    "publicPath": "http://localhost:9090/",
+    "port": 9090,
+    "jsonpFunction": "webpackJsonp_master"
+}
