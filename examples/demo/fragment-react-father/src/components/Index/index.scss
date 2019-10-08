@@ -42,6 +42,8 @@
         }
         .body{
             flex: 1;
+            overflow: auto;
+            overflow-x: hidden;
         }
     }
 }
