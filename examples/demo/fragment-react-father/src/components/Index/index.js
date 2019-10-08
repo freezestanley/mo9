@@ -32,16 +32,16 @@ export default class Home extends React.Component {
               return window.location.pathname.startsWith(this.baseUrl);
             }
           },
-        //   {
-        //       name: "a44",
-        //       application_name: "grandson",
-        //       entry: "http://localhost:8099/app",
-        //       contain: this.refs.container3,
-        //       baseUrl: "/grandson",
-        //       canActive(path) {
-        //         return window.location.pathname.startsWith(this.baseUrl);
-        //       }
-        //   },
+          {
+              name: "a44",
+              application_name: "finder",
+              entry: "http://localhost:9091/app",
+              contain: this.refs.container3,
+              baseUrl: "/",
+              canActive(path) {
+                return window.location.pathname.startsWith(this.baseUrl);
+              }
+          },
         //   {
         //       name: "a45",
         //       application_name: "reactfather",
@@ -108,11 +108,11 @@ export default class Home extends React.Component {
                         <img  width="100%" src="https://zalife.zhonganib.com/static/img/list-entry.249eaf18b35db223f681e50df2a1c957.png" alt=""/>
                     </div>
 
-                    <div id="44" ref="container4"></div>
-                    <div id="33" ref="container3"></div>
+                    
                     
                     <div id="11" ref="container1"></div>
                     <div id="22" ref="container2"></div>
+                    <div id="33" ref="container3"></div>
                     
                 </div>
                 <div className={'footer'}>
