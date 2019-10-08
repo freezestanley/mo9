@@ -36,7 +36,49 @@ app.use(async function (ctx, next) {
       console.log('clear interval')
       clearInterval(interval)
     });
-  } else {
+  } 
+  else if(ctx.req.url === '/getData'){
+    ctx.body = [
+      {
+          img: 'https://open-cdn.zhongan.com/dm-instrument/images/vwam9ib854denmynakphtoo0vxlb6mxv7lo466sm.png',
+          title: '复星康乐一生2019',
+          title2: '长期重疾险',
+          info1: '108种重疾+25种中症+40种轻症',
+          info2: '肿瘤二次赔付可选',
+          info3: '前十年重疾保额提升30',
+          price: '156.5',
+          price1: '50',
+          age: '30天-50周岁',
+          time: '终身'
+      },
+      {
+          img: 'https://open-cdn.zhongan.com/dm-instrument/images/jwnyfl3he7m7ibr49f0yazrqxfia7hfom7qbn6un.png',
+          title: '安邦北极星',
+          title2: '长期重疾险',
+          info1: '108种重疾+25种中症+40种轻症',
+          info2: '肿瘤二次赔付可选',
+          info3: '前十年重疾保额提升30',
+          price: '156.5',
+          price1: '30',
+          age: '20天-50周岁',
+          time: '终身'
+      },
+      {
+          img: 'https://open-cdn.zhongan.com/dm-instrument/images/6w3j2xkbboq46hrovop0il64rmrbofjzykgkxndg.png',
+          title: '复星保德信星悦',
+          title2: '长期重疾险',
+          info1: '108种重疾+25种中症+40种轻症',
+          info2: '肿瘤二次赔付可选',
+          info3: '前十年重疾保额提升30',
+          price: '156.5',
+          price1: '140',
+          age: '20天-80周岁',
+          time: '终身'
+      },
+  ]
+  return;
+  }
+  else {
     if (ctx.req.url === '/app') {
       return await ctx.render('app')
     } else {

@@ -1,54 +1,24 @@
 import React from 'react';
 import './index.scss';
+import axios from 'axios';
+
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [
-                {
-                    img: 'https://open-cdn.zhongan.com/dm-instrument/images/vwam9ib854denmynakphtoo0vxlb6mxv7lo466sm.png',
-                    title: '复星康乐一生2019',
-                    title2: '长期重疾险',
-                    info1: '108种重疾+25种中症+40种轻症',
-                    info2: '肿瘤二次赔付可选',
-                    info3: '前十年重疾保额提升30',
-                    price: '156.5',
-                    price1: '50',
-                    age: '30天-50周岁',
-                    time: '终身'
-                },
-                {
-                    img: 'https://open-cdn.zhongan.com/dm-instrument/images/jwnyfl3he7m7ibr49f0yazrqxfia7hfom7qbn6un.png',
-                    title: '安邦北极星',
-                    title2: '长期重疾险',
-                    info1: '108种重疾+25种中症+40种轻症',
-                    info2: '肿瘤二次赔付可选',
-                    info3: '前十年重疾保额提升30',
-                    price: '156.5',
-                    price1: '30',
-                    age: '20天-50周岁',
-                    time: '终身'
-                },
-                {
-                    img: 'https://open-cdn.zhongan.com/dm-instrument/images/6w3j2xkbboq46hrovop0il64rmrbofjzykgkxndg.png',
-                    title: '复星保德信星悦',
-                    title2: '长期重疾险',
-                    info1: '108种重疾+25种中症+40种轻症',
-                    info2: '肿瘤二次赔付可选',
-                    info3: '前十年重疾保额提升30',
-                    price: '156.5',
-                    price1: '140',
-                    age: '20天-80周岁',
-                    time: '终身'
-                },
-            ]
+            data: [ ]
         };
     }
     goto1 () {
         window.location.href = "https://one.zhongan.com/fcp/msj-h5/#/?channel=Ap2ZASG001%21aqw&type=1"
     }
     componentDidMount() {
-
+        axios.get('http://localhost:9200/getData').then(res=>{
+            console.log(res)
+            this.setState({
+                data: res.data
+            })
+        })
     }
     render() {
         return (
