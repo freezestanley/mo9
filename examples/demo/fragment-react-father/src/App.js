@@ -18,17 +18,6 @@ function App({baseUrl}) {
   return (
     <Router basename={baseUrl}>
       <div className={`App ${Chaoxi.classNamespace}`}>
-        {/* <h2>Tasdfasdf {baseUrl}</h2>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/reactchild">child</Link>
-            </li>
-            <li>
-              <Link to="/index">index</Link>
-            </li>
-          </ul>
-        </nav> */}
         <Route path="/" component={Index} />
         <Route path="/reactchild" component={Home} />
       </div>

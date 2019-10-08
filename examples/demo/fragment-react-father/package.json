@@ -14,7 +14,7 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
-    "chaoxi": "^1.0.82",
+    "chaoxi": "^1.0.85",
     "cross-env": "^6.0.3",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
