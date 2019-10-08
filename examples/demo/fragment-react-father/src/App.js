@@ -19,7 +19,7 @@ function App({baseUrl}) {
   return (
     <Router basename={baseUrl}>
       <div className={`App ${Chaoxi.classNamespace}`}>
-        <h2>This is father React {baseUrl}</h2>
+        <h2>Tasdfasdf {baseUrl}</h2>
         <nav>
           <ul>
             <li>
