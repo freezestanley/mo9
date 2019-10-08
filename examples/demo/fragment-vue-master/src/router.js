@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Hello from '@/components/Hello.vue';
-// import World from '@/components/World.vue';
+import Index from '@/pages/Notify';
+
+
 Vue.use(Router)
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -14,15 +15,20 @@ export default function getRouter(base) {
     base,
     routes: [
       {
-        path: '/hello',
-        name: 'hello',
-        component: Hello
+        path: '/',
+        name: 'index',
+        component: Index
       },
       {
-        path: '/world',
-        name: 'world',
-        component: () => import('@/components/World.vue')
-      }
+        path: '/insure',
+        name: 'insure',
+        component: () => import('@/pages/Insure')
+      },
+      {
+        path: '/outOrder',
+        name: 'outOrder',
+        component: () => import('@/pages/outOrder')
+      },
     ]
   })
 }
