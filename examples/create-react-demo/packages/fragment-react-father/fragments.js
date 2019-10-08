@@ -15,9 +15,10 @@ const PORT = config.port
 app.use(cors())
 const options = { threshold: 2048 }
 app.use(compress(options))
-app.use(koaSse())
+
 app.use(serve('build'))
 app.use(views(path.resolve(__dirname, './build')))
+app.use(koaSse())
 app.use(async function (ctx, next) {
   if (ctx.req.url === '/event') { 
     let n = 0;

@@ -13,7 +13,7 @@
     "init": "yarn"
   },
   "dependencies": {
-    "chaoxi": "^1.0.82",
+    "chaoxi": "^1.0.85",
     "core-js": "^2.6.5",
     "cross-env": "^6.0.0",
     "vue": "^2.6.10",
