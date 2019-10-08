@@ -1,6 +1,7 @@
 <template>
   <div class="p-outorder-container">
     <div v-if="!isProcessing">
+      <x-header title="出单结果"></x-header >
       <div
         v-if="isOutOrderSuccess"
         class="m-outorder-success">
@@ -29,7 +30,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Outorder',
   data() {
@@ -51,6 +51,7 @@ export default {
   computed: {
   },
   created() {
+    window.document.title = '出单结果'
     this.onCheckPayStatus()
   },
   methods: {
@@ -95,7 +96,7 @@ export default {
   background-color: #fff;
   width: 100%;
   height: 100%;
-  padding-top: 56px;
+  padding-top: 120px;
   .p-outorder-processing{
     position:absolute;
     width: 100%;

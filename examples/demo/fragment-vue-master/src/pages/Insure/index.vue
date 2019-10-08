@@ -1,5 +1,6 @@
 <template>
   <div class="p-insure-container">
+    <x-header  title="信息录入"></x-header >
     <div class="c-group-container">
       <div class="c-group-title vux-1px-b">
         投保人信息
@@ -165,6 +166,9 @@ export default {
       return value === 'Y' ? '男' : '女'
     }
   },
+  created() {
+    window.document.title = '信息录入'
+  },
   methods: {
     onRoute() {
       this.$router.push({
@@ -179,7 +183,7 @@ export default {
 .p-insure-container{
   width: 100%;
   height: 100%;
-  padding-bottom: 50px;
+  padding:64px 0 50px;
   background: #f3f3f3;
   overflow-y: auto;
   -webkit-overflow-scrolling: auto;

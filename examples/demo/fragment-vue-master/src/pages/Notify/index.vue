@@ -1,5 +1,6 @@
 <template>
   <div class="p-notify-container">
+    <x-header title="告知信息"></x-header>
     <div class="question_top">
       <span>重要</span>
       为保证被保人的保险权益在理赔时不受影响，请确认被保人健康状况是否符合投保条件：
@@ -33,6 +34,9 @@
 
 <script>
 export default {
+  created() {
+    window.document.title = '告知信息'
+  },
   methods: {
     onRoute() {
       this.$router.push({
@@ -47,6 +51,7 @@ export default {
 .p-notify-container {
   width: 100%;
   height: 100%;
+  padding-top: 64px;
   padding-bottom: 64px;
   background: #f3f3f3;
   overflow-y: auto;
