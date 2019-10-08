@@ -13,6 +13,7 @@
     "init": "yarn"
   },
   "dependencies": {
+    "chaoxi": "^1.0.82",
     "core-js": "^2.6.9",
     "cross-env": "^6.0.0",
     "html-entry": "^1.0.3",
