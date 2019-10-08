@@ -20,6 +20,7 @@
         v-model="cardNo"
         placeholder="请输入投保人身份证号码"
         :max="18"/>
+      <x-date v-model="birthday"/>
       <x-radio
         :option-list="genderList"
         v-model="gender"
@@ -57,6 +58,9 @@
           title="证件号码" 
           :value="cardNo" />
         <x-cell
+        title="出生日期"
+        :value="birthday" />
+        <x-cell
           title="性别" 
           :value="gender|genderFilter" />
         <x-cell
@@ -81,6 +85,7 @@
           name="cardNo2"
           placeholder="请输入被保人身份证号码"
           :max="18"/>
+        <x-date v-model="birthday2"/>
         <x-radio
           :option-list="genderList"
           v-model="gender2"
@@ -123,6 +128,7 @@
 import XInput from '@/components/XInput'
 import XCell from '@/components/XCell'
 import XRadio from '@/components/XRadio'
+import XDate from '@/components/XDate'
 
 export default {
   data() {
@@ -142,6 +148,7 @@ export default {
       ],
       name: '',
       cardNo: '',
+      birthday: '',
       mobile: '',
       email: '',
       gender: 'Y',
@@ -149,6 +156,7 @@ export default {
       relation: '1',
       name2: '',
       cardNo2: '',
+      birthday2: '',
       mobile2: '',
       email2: '',
       gender2: 'Y',
@@ -160,6 +168,7 @@ export default {
     XCell,
     XInput,
     XRadio,
+    XDate,
   },
   filters: {
     genderFilter(value) {
