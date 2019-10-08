@@ -8,64 +8,54 @@ export default class Home extends React.Component {
     }
     componentDidMount() {
         const appinfo = [
-        //   {
-        //       name: "a49",
-        //       application_name: "reactproduct",
-        //       entry: "http://localhost:9200/app",
-        //       contain: this.refs.container,
-        //       baseUrl: "/bb",
-        //       canActive(path) {
-        //         debugger;
-        //         // return window.location.pathname.startsWith("/reactchild");
-        //         return window.location.pathname.startsWith(this.baseUrl);
-        //       }
-        //   },
+          {
+              name: "a49",
+              application_name: "reactproduct",
+              entry: "http://localhost:9200/app",
+              contain: this.refs.container1,
+              baseUrl: "/",
+              canActive(path) {
+                debugger;
+                // return window.location.pathname.startsWith("/reactchild");
+                return window.location.pathname.startsWith(this.baseUrl);
+              }
+          },
           {
             name: "a50",
             application_name: "reactnews",
             entry: "http://localhost:9300/app",
-            contain: this.refs.container1,
-            baseUrl: "/aa",
+            contain: this.refs.container2,
+            baseUrl: "/",
             canActive(path) {
                 debugger;
               // return window.location.pathname.startsWith("/reactchild");
               return window.location.pathname.startsWith(this.baseUrl);
             }
           },
-          {
-            name: "a1",
-            application_name: "child",
-            entry: "http://localhost:8082/app",
-            contain: this.refs.container2,
-            baseUrl: "/other2",
-            canActive(path) {
-              return window.location.pathname.startsWith(this.baseUrl);
-            }
-          },
-          {
-              name: "a44",
-              application_name: "grandson",
-              entry: "http://localhost:8099/app",
-              contain: this.refs.container3,
-              baseUrl: "/grandson",
-              canActive(path) {
-                return window.location.pathname.startsWith(this.baseUrl);
-              }
-          },
-          {
-              name: "a45",
-              application_name: "reactfather",
-              entry: "http://localhost:5020/app",
-              contain: this.refs.container4,
-              baseUrl: "/reactfather",
-              canActive(path) {
-                console.log(Chaoxi)
-                console.log(Chaoxi.fullUrl)
-                // baseUrl 会被chapxi重写成包含父路径
-                // 所以这里可以直接使用
-                return window.location.pathname.startsWith(this.baseUrl);
-              }
-          }
+        //   {
+        //       name: "a44",
+        //       application_name: "grandson",
+        //       entry: "http://localhost:8099/app",
+        //       contain: this.refs.container3,
+        //       baseUrl: "/grandson",
+        //       canActive(path) {
+        //         return window.location.pathname.startsWith(this.baseUrl);
+        //       }
+        //   },
+        //   {
+        //       name: "a45",
+        //       application_name: "reactfather",
+        //       entry: "http://localhost:5020/app",
+        //       contain: this.refs.container4,
+        //       baseUrl: "/reactfather",
+        //       canActive(path) {
+        //         console.log(Chaoxi)
+        //         console.log(Chaoxi.fullUrl)
+        //         // baseUrl 会被chapxi重写成包含父路径
+        //         // 所以这里可以直接使用
+        //         return window.location.pathname.startsWith(this.baseUrl);
+        //       }
+        //   }
         ]
 
         console.log('======',this.refs);
@@ -120,8 +110,9 @@ export default class Home extends React.Component {
 
                     <div id="44" ref="container4"></div>
                     <div id="33" ref="container3"></div>
-                    <div id="22" ref="container2"></div>
+                    
                     <div id="11" ref="container1"></div>
+                    <div id="22" ref="container2"></div>
                     
                 </div>
                 <div className={'footer'}>

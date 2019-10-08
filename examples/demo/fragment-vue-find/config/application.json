@@ -1,8 +1,8 @@
 {
-    "name": "master",
+    "name": "find",
     "baseUrl": "",
-    "classNamespace": "master",
-    "library": "master",
+    "classNamespace": "find",
+    "library": "find",
     "publicPath": "http://localhost:9091/",
     "port": 9091,
     "jsonpFunction": "webpackJsonp_master"
