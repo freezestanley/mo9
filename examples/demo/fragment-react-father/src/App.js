@@ -4,6 +4,9 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Index from './components/Index'
 import Home from './components/Home'
+import Header from './components/header'
+import Footer from './components/footer'
+
 import Chaoxi, {globalEvent} from './global'
 
 function App({baseUrl}) {
@@ -11,7 +14,7 @@ function App({baseUrl}) {
   return (
     <Router basename={baseUrl}>
       <div className={`App ${Chaoxi.classNamespace}`}>
-        <Route path="/" exact component={Index} />
+        <Route path="/" component={Index} />
         <Route path="/reactchild" component={Home} />
       </div>
     </Router>

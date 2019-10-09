@@ -24,7 +24,7 @@ class Buy extends React.Component {
     Chaoxi.registerApps(appinfo)
   }
   render() {
-     return (<div ref="container" id="asdf">阿斯顿发顺丰</div>)
+     return (<div ref="container" id="asdf"></div>)
   }
   
 
