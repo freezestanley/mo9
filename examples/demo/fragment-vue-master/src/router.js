@@ -10,6 +10,8 @@ Router.prototype.push = function push(location) {
 }
 
 export default function getRouter(base) {
+  console.log('9999999999999999999999999999999999')
+  console.log(base)
   return new Router({
     mode: 'history',
     base,

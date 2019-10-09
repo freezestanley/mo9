@@ -2012,14 +2012,14 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chaoxi@^1.0.82:
-  version "1.0.82"
-  resolved "https://registry.yarnpkg.com/chaoxi/-/chaoxi-1.0.82.tgz#a6b2ce18398bcc144a3083aba3004c18aece9271"
-  integrity sha512-yvooxvNWUW9m0Xi9umJO1TNWmdwbHvBq6ZSaCVkz1TjzJnpY7XZhbWacDJSGk2NvYfzoQ0K7YgPpSHAMbtzgsg==
+chaoxi@^1.0.87:
+  version "1.0.87"
+  resolved "https://registry.yarnpkg.com/chaoxi/-/chaoxi-1.0.87.tgz#457390b4b1fcd99db5ae72f796495056766abb1d"
+  integrity sha512-+qUb7j4aS2/S8afuuNpsPt0DGlNvSHWkaiuBjdlZUGuPf5EBG7GhSkt3121qFi3FHPPscL8mLgYe2etS1zH9tg==
   dependencies:
     core-js "^3.2.1"
     eventemitter2 "^5.0.1"
-    html-entry "^1.0.5"
+    html-entry "^1.0.7"
 
 chardet@^0.4.0:
   version "0.4.2"
@@ -4339,10 +4339,10 @@ html-entry@^1.0.3:
   dependencies:
     core-js "^3.2.1"
 
-html-entry@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/html-entry/-/html-entry-1.0.5.tgz#99cec912880f0dcb6cce3af30e1d31e7c8e348fe"
-  integrity sha512-/SZlq7Eq1GV31hiLQTY4nfxUrunSmfT6SKW6SDoDL9P9Xs04Ogs6VL+4jUkvYmfkrEBD3ahnn2BYP88FRxmyPQ==
+html-entry@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/html-entry/-/html-entry-1.0.7.tgz#69940eab7d55df5d827d28780a27cef6769730e9"
+  integrity sha512-puoqLKfplZ6R2ecCavpPUFh+xLQwStjlKAnD4ZYVubCEHH0UnhWmxOUtY5/NpN74OiuAgqkh6sPNO/twy1hpOw==
   dependencies:
     core-js "^3.2.1"
 

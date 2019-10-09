@@ -7,18 +7,11 @@ import Home from './components/Home'
 import Chaoxi, {globalEvent} from './global'
 
 function App({baseUrl}) {
-        var evtSource = new EventSource("http://localhost:5020/event");
-        evtSource.onmessage = function(e) {
-            console.log('onmsg: ' + e.data);
-        }
-        evtSource.onerror = function(e) {
-            console.log('error', e);
-            evtSource.close();
-        }
+        
   return (
     <Router basename={baseUrl}>
       <div className={`App ${Chaoxi.classNamespace}`}>
-        <Route path="/" component={Index} />
+        <Route path="/" exact component={Index} />
         <Route path="/reactchild" component={Home} />
       </div>
     </Router>

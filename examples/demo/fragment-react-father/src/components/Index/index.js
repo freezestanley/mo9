@@ -8,6 +8,7 @@ export default class Home extends React.Component {
         window.location.href = "https://one.zhongan.com/fcp/msj-h5/#/?channel=Ap2ZASG001%21aqw&type=1"
     }
     componentDidMount() {
+        const _self = this
         const appinfo = [{
             name: "a49",
             application_name: "reactproduct",
@@ -28,16 +29,16 @@ export default class Home extends React.Component {
                 return window.location.pathname.startsWith(this.baseUrl);
             }
         },
-        {
-            name: "a44",
-            application_name: "finder",
-            entry: "http://localhost:9091/app",
-            contain: this.refs.container3,
-            baseUrl: "/",
-            canActive(path) {
-                return window.location.pathname.startsWith(this.baseUrl);
-            }
-        },
+        // {
+        //     name: "a44",
+        //     application_name: "finder",
+        //     entry: "http://localhost:9091/app",
+        //     contain: this.refs.container3,
+        //     baseUrl: "/",
+        //     canActive(path) {
+        //         return window.location.pathname.startsWith(this.baseUrl);
+        //     }
+        // },
             //   {
             //       name: "a45",
             //       application_name: "reactfather",
@@ -54,6 +55,27 @@ export default class Home extends React.Component {
             //   }
         ]
         Chaoxi.registerApps(appinfo)
+
+        var evtSource = new EventSource("http://localhost:5020/event");
+        evtSource.onmessage = function(e) {
+            console.log('onmsg: ' + e.data);
+        }
+        evtSource.onerror = function(e) {
+            console.log('error', e);
+            evtSource.close();
+
+            const app = [{
+                name: "a44",
+                application_name: "finder",
+                entry: "http://localhost:9091/app",
+                contain: _self.refs.container3,
+                baseUrl: "/",
+                canActive(path) {
+                    return window.location.pathname.startsWith(this.baseUrl);
+                }
+            }]
+            Chaoxi.registerApps(app)
+        }
     }
 
     handleTypeClick(e) {
@@ -101,9 +123,10 @@ export default class Home extends React.Component {
                     <div className="consultant-entry-list">
                         <img width="100%" src="https://zalife.zhonganib.com/static/img/list-entry.249eaf18b35db223f681e50df2a1c957.png" alt="" />
                     </div>
+                    <div id="33" ref="container3"></div>
                     <div id="11" ref="container1"></div>
                     <div id="22" ref="container2"></div>
-                    <div id="33" ref="container3"></div>
+                    <div id="44" ref="container4"></div>
                 </div>
                 <div className={'footer'}>
                     <div>
