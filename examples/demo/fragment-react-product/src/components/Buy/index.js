@@ -13,7 +13,7 @@ class Buy extends React.Component {
           application_name: "vuemaster",
           entry: "http://localhost:9099/app",
           contain: this.refs.container,
-          baseUrl: "buy",
+          baseUrl: "/buy",
           canActive(path) {
             console.log("98098908090987098709")
             // return window.location.pathname.startsWith(this.baseUrl);
@@ -24,7 +24,7 @@ class Buy extends React.Component {
     Chaoxi.registerApps(appinfo)
   }
   render() {
-     return (<div ref="container" id="asdf">阿斯顿发顺丰</div>)
+     return (<div ref="container" id="asdf"></div>)
   }
   
 
