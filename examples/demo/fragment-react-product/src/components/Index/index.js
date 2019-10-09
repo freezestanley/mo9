@@ -12,6 +12,10 @@ export default class Home extends React.Component {
     goto1 () {
         window.location.href = "https://one.zhongan.com/fcp/msj-h5/#/?channel=Ap2ZASG001%21aqw&type=1"
     }
+    buy () {
+        alert('fadfasdf')
+        this.props.history.push('/buy')
+    }
     componentDidMount() {
         axios.get('http://localhost:9200/getData').then(res=>{
             console.log(res)
@@ -27,7 +31,7 @@ export default class Home extends React.Component {
                             this.state.data.map((ele, idx) => {
                                 return (
                                 <div className="card" key={idx}>
-                                <div className="card-header">
+                                <div className="card-header" onClick={() => this.buy()}>
                                 <img src={ele.img}/> 
                                     <div className="t1">
                                         {ele.title}

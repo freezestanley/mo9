@@ -1,9 +1,8 @@
 {
-    "name": "master",
-    "baseUrl": "",
-    "classNamespace": "master",
-    "library": "master",
+    "name": "vuemaster",
+    "baseUrl": "/buy",
+    "classNamespace": "vuemaster",
+    "library": "vuemaster",
     "publicPath": "http://localhost:9099/",
-    "port": 9099,
-    "jsonpFunction": "webpackJsonp_master"
+    "port": 9099
 }
