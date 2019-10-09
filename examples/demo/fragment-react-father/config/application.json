@@ -1,8 +1,8 @@
 {
-    "name": "reactfather",
-    "baseUrl": "/reactfather",
-    "classNamespace": "reactfather",
-    "library": "reactfather",
-    "publicPath": "http://localhost:9100",
-    "port": 9100
+  "name": "reactfather",
+  "baseUrl": "/reactfather",
+  "classNamespace": "reactfather",
+  "library": "reactfather",
+  "publicPath": "http://localhost:9200",
+  "port": 9200
 }

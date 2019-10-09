@@ -7,6 +7,7 @@
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
+    "antd-mobile": "^2.3.1",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
@@ -67,7 +68,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "cross-env PORT=9100 REACT_APP_TYPE=application node scripts/start.js",
+    "start": "cross-env PORT=9200 REACT_APP_TYPE=application node scripts/start.js",
     "build": "cross-env REACT_APP_TYPE=application node scripts/build.js",
     "app": "node fragments.js",
     "test": "node scripts/test.js",
