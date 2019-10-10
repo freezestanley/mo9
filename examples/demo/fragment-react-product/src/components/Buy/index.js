@@ -13,7 +13,7 @@ class Buy extends React.Component {
           application_name: "vuemaster",
           entry: "http://localhost:9099/app",
           contain: this.refs.container,
-          baseUrl: "buy",
+          baseUrl: "/buy",
           canActive(path) {
             console.log("98098908090987098709")
             // return window.location.pathname.startsWith(this.baseUrl);
