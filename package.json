@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsnolan23/tailor-react-spa.git"
+    "url": "git+https://github.com/freezestanley/mo9.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tsnolan23/tailor-react-spa/issues"
+    "url": "https://github.com/freezestanley/mo9/issues"
   },
-  "homepage": "https://github.com/tsnolan23/tailor-react-spa#readme",
+  "homepage": "https://github.com/freezestanley/mo9/#readme",
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.0",
