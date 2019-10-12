@@ -3,6 +3,6 @@
     "baseUrl": "/finder",
     "classNamespace": "finder",
     "library": "finder",
-    "publicPath": "http://localhost:9091/",
-    "port": 9091
+    "publicPath": "http://localhost:8080/",
+    "port": 8080
 }
