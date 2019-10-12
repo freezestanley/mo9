@@ -18,12 +18,15 @@ app.use(compress())
 app.use(serve('../fragment-vue-child/dist'))
 app.use(views(path.resolve(__dirname, './dist')))
 app.use(async function (ctx, next) {
-  console.log(ctx.req.url)
+    console.log(ctx.req.url)
     if (ctx.req.url === '/app') {
         return await ctx.render('app')
+    } else if (ctx.req.url === '/health') {
+      return await ctx.body('200')
     } else {
-        return await ctx.render('index')
+      return await ctx.render('index')
     }
+    next()
 })
 
 
