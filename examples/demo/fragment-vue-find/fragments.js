@@ -22,7 +22,7 @@ app.use(async function (ctx, next) {
     if (ctx.req.url === '/app') {
         return await ctx.render('app')
     } else if (ctx.req.url === '/health') {
-      return await ctx.body('200')
+      return ctx.body = '200'
     } else {
       return await ctx.render('index')
     }
